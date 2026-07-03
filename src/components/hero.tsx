@@ -42,12 +42,14 @@ export default function Hero() {
         </div>
         <div className="hero-photo">
           <Image
-            src="/Pieter_Borremans.jpeg"
-            alt="Pieter Borremans - Echo Room"
-            fill
-            priority
-            className="photo-img"
-          />
+  src="/Pieter_Borremans.jpeg"
+  alt="Pieter Borremans - Echo Room"
+  fill
+  priority
+  quality={100}
+  sizes="100vw"
+  className="photo-img"
+/>
           <div className="photo-blend" />
         </div>
       </div>
