@@ -185,7 +185,7 @@ h1 {
 
 .photo-img {
   object-fit: cover;
-  object-position: center 10%;
+  object-position: 30% 15%;
 }
 
 /* Only fade the LEFT edge where photo meets text */
