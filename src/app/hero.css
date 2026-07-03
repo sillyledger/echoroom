@@ -64,7 +64,7 @@
   position: absolute;
   inset: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 45fr 55fr;
 }
 
 /* TEXT SIDE */
@@ -80,12 +80,12 @@
 h1 {
   display: flex;
   flex-direction: column;
-  font-size: clamp(80px, 10vw, 130px);
-  font-weight: 700;
-  line-height: 0.87;
+  font-size: clamp(100px, 13vw, 160px);
+  font-weight: 800;
+  line-height: 0.85;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .title-white { color: #ffffff; }
@@ -188,13 +188,11 @@ h1 {
   object-position: center 10%;
 }
 
+/* Only fade the LEFT edge where photo meets text */
 .photo-blend {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(to right, #000 0%, rgba(0,0,0,0.6) 25%, transparent 55%),
-    linear-gradient(to top, #000 0%, rgba(0,0,0,0.3) 20%, transparent 45%),
-    linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.2) 10%, transparent 25%);
+  background: linear-gradient(to right, #000 0%, rgba(0,0,0,0.5) 18%, transparent 40%);
 }
 
 /* PULL QUOTE */
