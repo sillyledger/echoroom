@@ -59,22 +59,48 @@
   color: #c0392b;
 }
 
-/* LAYOUT */
+/* LAYOUT — photo is full bleed background, text sits on top */
 .hero-inner {
   position: absolute;
   inset: 0;
-  display: grid;
-  grid-template-columns: 45fr 55fr;
+}
+
+/* PHOTO — full bleed behind everything */
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.photo-img {
+  object-fit: cover;
+  object-position: 62% center;
+}
+
+/* Dark left side so text is readable, photo visible on right */
+.photo-blend {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    #000 0%,
+    rgba(0,0,0,0.92) 20%,
+    rgba(0,0,0,0.6) 40%,
+    rgba(0,0,0,0.15) 65%,
+    transparent 80%
+  );
 }
 
 /* TEXT SIDE */
 .hero-text {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 5;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 0 48px 56px;
+  max-width: 55%;
 }
 
 h1 {
@@ -176,24 +202,6 @@ h1 {
 }
 
 .pill:hover { border-color: #555; color: #ccc; }
-
-/* PHOTO SIDE */
-.hero-photo {
-  position: relative;
-  overflow: hidden;
-}
-
-.photo-img {
-  object-fit: cover;
-  object-position: 30% 15%;
-}
-
-/* Only fade the LEFT edge where photo meets text */
-.photo-blend {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, #000 0%, rgba(0,0,0,0.5) 18%, transparent 40%);
-}
 
 /* PULL QUOTE */
 .pull-quote {
