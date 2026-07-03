@@ -59,35 +59,38 @@
   color: #c0392b;
 }
 
-/* LAYOUT — photo is full bleed background, text sits on top */
+/* LAYOUT */
 .hero-inner {
   position: absolute;
   inset: 0;
 }
 
-/* PHOTO — full bleed behind everything */
+/* PHOTO — anchored right, 50% width matching the portrait shape so
+   the whole subject (head, phone, hand, watch, jacket) stays visible */
 .hero-photo {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
   z-index: 1;
 }
 
 .photo-img {
   object-fit: cover;
-  object-position: 62% center;
+  object-position: center 42%;
 }
 
-/* Dark left side so text is readable, photo visible on right */
+/* Soft fade on the LEFT edge of the photo into the black text area */
 .photo-blend {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
     #000 0%,
-    rgba(0,0,0,0.92) 20%,
-    rgba(0,0,0,0.6) 40%,
-    rgba(0,0,0,0.15) 65%,
-    transparent 80%
+    rgba(0,0,0,0.75) 12%,
+    rgba(0,0,0,0.15) 30%,
+    transparent 45%
   );
 }
 
@@ -128,7 +131,7 @@ h1 {
 
 .description {
   font-size: 13px;
-  color: #666;
+  color: #777;
   line-height: 1.7;
   max-width: 340px;
   margin-bottom: 32px;
@@ -224,7 +227,7 @@ h1 {
 
 .pull-quote p {
   font-size: 13px;
-  color: #666;
+  color: #888;
   line-height: 1.7;
   font-style: italic;
 }
