@@ -16,7 +16,6 @@ export default function Hero() {
           </a>
         </div>
       </nav>
-
       <div className="hero-inner">
         <div className="hero-text">
           <h1>
@@ -41,11 +40,10 @@ export default function Hero() {
             <a href="#" className="pill">Amazon Music</a>
           </div>
         </div>
-
         <div className="hero-photo">
           <Image
-            src="/photo.jpg"
-            alt="Echo Room host"
+            src="/Pieter_Borremans.jpeg"
+            alt="Pieter Borremans - Echo Room"
             fill
             priority
             className="photo-img"
@@ -53,7 +51,6 @@ export default function Hero() {
           <div className="photo-blend" />
         </div>
       </div>
-
       <div className="pull-quote">
         <span className="quote-mark">&ldquo;</span>
         <p>Just me, talking.<br />No edits.<br />No agenda.<br />
