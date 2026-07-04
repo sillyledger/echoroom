@@ -237,3 +237,108 @@ h1 {
   font-style: normal;
   font-weight: 500;
 }
+/* ===================== MOBILE ===================== */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* NAV: keep logo + listen, drop the long links */
+  .nav {
+    padding: 18px 22px;
+  }
+  .nav-links a:not(.nav-listen) { display: none; }
+  .nav-listen {
+    padding: 7px 16px !important;
+    font-size: 11px;
+  }
+
+  /* Stack: photo on top, text below */
+  .hero-inner {
+    position: relative;
+    inset: auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  /* PHOTO becomes a full-width banner, forced above the text */
+  .hero-photo {
+    position: relative;
+    order: -1;
+    width: 100%;
+    height: 46vh;
+    min-height: 320px;
+    z-index: 1;
+  }
+  .photo-img {
+    object-fit: cover;
+    object-position: center 28%;
+  }
+  /* fade the BOTTOM into black so the text below blends in */
+  .photo-blend {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0,0,0,0.15) 55%,
+      rgba(0,0,0,0.8) 85%,
+      #000 100%
+    );
+  }
+
+  /* TEXT below the photo */
+  .hero-text {
+    position: relative;
+    inset: auto;
+    z-index: 5;
+    max-width: 100%;
+    padding: 0 22px 40px;
+    margin-top: -8px;
+  }
+
+  h1 {
+    font-size: 18vw;
+    line-height: 0.88;
+    margin-bottom: 18px;
+  }
+
+  .tagline {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    font-size: 14px;
+    max-width: 100%;
+    margin-bottom: 26px;
+  }
+
+  /* Buttons stack full width */
+  .cta-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+  .btn-primary, .btn-secondary {
+    justify-content: center;
+    padding: 15px 24px;
+    font-size: 12px;
+  }
+
+  .platforms { gap: 8px; }
+  .platforms-label { width: 100%; margin-bottom: 4px; }
+  .pill { font-size: 11px; padding: 7px 14px; }
+
+  /* Hide desktop pull-quote on mobile (it overlaps) */
+  .pull-quote { display: none; }
+}
+
+/* very small phones */
+@media (max-width: 380px) {
+  h1 { font-size: 19vw; }
+  .hero-photo { height: 42vh; min-height: 280px; }
+}
