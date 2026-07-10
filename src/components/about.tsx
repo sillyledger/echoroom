@@ -88,7 +88,7 @@ export default function About() {
           <div className="about-social">
             <span className="about-social-label">Find him elsewhere</span>
             <div className="about-social-row">
-              <a href="#" className="about-social-icon" aria-label="LinkedIn">in</a>
+              <a href="https://www.linkedin.com/in/pieter-borremans/" className="about-social-icon" aria-label="LinkedIn">in</a>
               <a href="#" className="about-social-icon" aria-label="X / Twitter">X</a>
               <a href="#" className="about-social-icon" aria-label="Website">W</a>
               <a href="#" className="about-social-icon" aria-label="Indie Hackers">IH</a>
