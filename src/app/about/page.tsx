@@ -2,63 +2,94 @@ import type { Metadata } from "next";
 import About from "@/components/about";
 
 export const metadata: Metadata = {
-  title: "About Pieter Borremans | Echo Room",
+  title: "Pieter Borremans — Host of Echo Room",
   description:
     "Pieter Borremans is the founder of Ryoka Group and host of Echo Room, a monologue podcast launching September 2026.",
-  openGraph: {
-    title: "About Pieter Borremans | Echo Room",
-    description:
-      "Pieter Borremans is the founder of Ryoka Group and host of Echo Room, a monologue podcast launching September 2026.",
-    url: "https://echoroom.xyz/about",
-    siteName: "Echo Room",
-    images: ["/Pieter_Borremans.jpeg"],
-    type: "profile",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About Pieter Borremans | Echo Room",
-    description:
-      "Pieter Borremans is the founder of Ryoka Group and host of Echo Room, a monologue podcast launching September 2026.",
-    images: ["/Pieter_Borremans.jpeg"],
-  },
   alternates: {
     canonical: "https://echoroom.xyz/about",
   },
+  openGraph: {
+    title: "Pieter Borremans — Host of Echo Room",
+    description:
+      "Founder of Ryoka Group and host of Echo Room, a monologue podcast launching September 2026.",
+    url: "https://echoroom.xyz/about",
+    siteName: "Echo Room",
+    type: "profile",
+    images: [
+      {
+        url: "https://echoroom.xyz/Pieter_Borremans.jpeg",
+        width: 1200,
+        height: 1200,
+        alt: "Pieter Borremans, host of Echo Room",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pieter Borremans — Host of Echo Room",
+    description:
+      "Founder of Ryoka Group and host of Echo Room, a monologue podcast launching September 2026.",
+    images: ["https://echoroom.xyz/Pieter_Borremans.jpeg"],
+  },
 };
 
-// NOTE: fill in real profile URLs in "sameAs" and adjust bio when ready.
+// Canonical entity graph — same @id as ryokagroup.com/founder so Google
+// treats both pages as describing the same Person, not two separate ones.
+// Keep sameAs, jobTitle, and description in sync with ryokagroup.com,
+// pieterborremans.com, and indiehacker.blog.
+// TODO: once this is live, add "https://echoroom.xyz" to the sameAs list
+// on ryokagroup.com/founder so the link resolves both directions.
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://ryokagroup.com/founder#pieter",
   name: "Pieter Borremans",
-  url: "https://echoroom.xyz/about",
-  image: "https://echoroom.xyz/Pieter_Borremans.jpeg",
+  givenName: "Pieter",
+  familyName: "Borremans",
   jobTitle: "Founder",
+  description:
+    "Pieter Borremans is the founder of Ryoka Group and host of Echo Room, a monologue podcast. A writer, digital entrepreneur, and software founder who builds, operates, and invests in software products.",
+  image: "https://echoroom.xyz/Pieter_Borremans.jpeg",
+  url: "https://echoroom.xyz/about",
   worksFor: {
     "@type": "Organization",
+    "@id": "https://ryokagroup.com/#organization",
     name: "Ryoka Group",
-    url: "https://ryokagroup.com",
   },
-  sameAs: [
-    "https://ryokagroup.com",
-    "https://echoroom.xyz",
-    // TODO: add LinkedIn / X / Indie Hackers profile links
+  homeLocation: [
+    { "@type": "Place", name: "Taipei, Taiwan" },
+    { "@type": "Place", name: "London, United Kingdom" },
   ],
-  description:
-    "Founder of Ryoka Group and host of Echo Room, a monologue podcast.",
+  sameAs: [
+    "https://ryokagroup.com/founder",
+    "https://pieterborremans.com",
+    "https://www.indiehacker.blog",
+    "https://ryoka.xyz",
+    "https://www.linkedin.com/in/pieter-borremans/",
+    "https://medium.com/@borremanspieter",
+    "https://www.youtube.com/@PieterBorremans",
+    "https://github.com/sillyledger",
+  ],
 };
 
 const podcastSchema = {
   "@context": "https://schema.org",
   "@type": "PodcastSeries",
+  "@id": "https://echoroom.xyz/#podcast",
   name: "Echo Room",
   url: "https://echoroom.xyz",
-  author: {
-    "@type": "Person",
-    name: "Pieter Borremans",
-  },
   description:
     "One voice. No script. No exit. Raw thoughts, uncut conversations, and the kind of honesty that doesn't fit anywhere else.",
+  author: {
+    "@type": "Person",
+    "@id": "https://ryokagroup.com/founder#pieter",
+    name: "Pieter Borremans",
+  },
+  publisher: {
+    "@type": "Organization",
+    "@id": "https://ryokagroup.com/#organization",
+    name: "Ryoka Group",
+  },
 };
 
 export default function AboutPage() {
@@ -66,12 +97,10 @@ export default function AboutPage() {
     <main>
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(podcastSchema) }}
       />
       <About />
