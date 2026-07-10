@@ -120,6 +120,31 @@ h1 {
 .title-white { color: #ffffff; }
 .title-red   { color: #c0392b; }
 
+/* LAUNCH BADGE */
+.launch-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  font-size: 11px;
+  font-weight: 500;
+  color: #ccc;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid #2a2a2a;
+  border-radius: 24px;
+  padding: 6px 14px 6px 10px;
+  margin-bottom: 20px;
+}
+
+.launch-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c0392b;
+  flex-shrink: 0;
+}
+
 .tagline {
   font-size: 12px;
   font-weight: 500;
@@ -303,6 +328,12 @@ h1 {
     font-size: 18vw;
     line-height: 0.88;
     margin-bottom: 18px;
+  }
+
+  .launch-badge {
+    font-size: 10px;
+    padding: 5px 12px 5px 9px;
+    margin-bottom: 14px;
   }
 
   .tagline {
