@@ -34,15 +34,41 @@ export default function About() {
         <div className="about-text">
           <div className="about-badge">About</div>
           <h1>Pieter Borremans</h1>
-          <p className="about-role">Founder, Ryoka Group — host of Echo Room</p>
+          <p className="about-role">
+            Writer, digital entrepreneur, and software founder. Born in
+            Indonesia, raised in Belgium, based between Taipei and London.
+          </p>
 
           <div className="about-divider" />
 
-          <p className="about-bio">
-            [ FILLER BIO TEXT — replace with the real copy. Two or three
-            short paragraphs about who Pieter is, what Echo Room is, and
-            why he started it. ]
-          </p>
+          <p className="about-section-label">Biography</p>
+          <div className="about-bio">
+            <p>
+              Pieter Borremans is the founder of Ryoka Group, a company that
+              builds, operates, and invests in software products. He has spent
+              25 years living and working across countries, a restlessness
+              that shaped everything he does now.
+            </p>
+            <p>
+              He started his first business at 22 and sold it almost fifteen
+              years later, just before AI, no-code, and vibecoding made it
+              possible for anyone without a development background to build
+              software from scratch. That shift is what Ryoka was built to
+              work inside.
+            </p>
+            <p>
+              Alongside Ryoka, he writes about the psychological and
+              emotional side of building alone: the burnout, the loneliness,
+              the decision fatigue, and the small wins that keep you going.
+              Most indie hacker content covers tactics and revenue. He writes
+              about what it actually feels like.
+            </p>
+            <p>
+              Echo Room is where that same honesty moves from the page to a
+              mic — one voice, no script, talking through whatever needs to
+              be said.
+            </p>
+          </div>
 
           <div className="about-stats">
             <div className="about-stat">
@@ -51,7 +77,7 @@ export default function About() {
             </div>
             <div className="about-stat">
               <span className="about-stat-label">Based</span>
-              <span className="about-stat-value">[ location ]</span>
+              <span className="about-stat-value">Taipei — London</span>
             </div>
             <div className="about-stat about-stat-accent">
               <span className="about-stat-label">Launching</span>
