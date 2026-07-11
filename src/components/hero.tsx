@@ -1,21 +1,10 @@
 import Image from "next/image";
+import Navbar from "./Navbar";
 
 export default function Hero() {
   return (
     <section className="hero">
-      <nav className="nav">
-        <div className="logo">Echo Room</div>
-        <div className="nav-links">
-          <a href="#">Episodes</a>
-          <a href="#">About</a>
-          <a href="#">Topics</a>
-          <a href="#">Shop</a>
-          <a href="#" className="nav-listen">
-            Listen
-            <span className="waveform">||||</span>
-          </a>
-        </div>
-      </nav>
+      <Navbar />
       <div className="hero-inner">
         <div className="hero-text">
           <div className="launch-badge">
