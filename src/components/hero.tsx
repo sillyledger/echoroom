@@ -23,7 +23,7 @@ export default function Hero() {
           </p>
           <div className="cta-row">
             <a href="#" className="btn-primary">Listen now →</a>
-            <a href="#" className="btn-secondary">Browse episodes</a>
+            <a href="/episodes" className="btn-secondary">Browse episodes</a>
           </div>
           <div className="platforms">
             <span className="platforms-label">Listen on</span>
