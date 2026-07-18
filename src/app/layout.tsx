@@ -4,6 +4,7 @@ import "./globals.css";
 import "./hero.css";
 import "./about.css";
 import "./episodes.css";
+import "./shop.css";
 
 const inter = Inter({
   subsets: ["latin"],

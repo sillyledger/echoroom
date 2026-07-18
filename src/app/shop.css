@@ -1,0 +1,94 @@
+.shop {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+}
+
+.shop-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 60px 48px 96px;
+}
+
+.shop-inner h1 {
+  font-size: clamp(56px, 9vw, 100px);
+  margin-bottom: 20px;
+}
+
+.shop-lede {
+  font-size: 15px;
+  color: #999;
+  line-height: 1.6;
+  max-width: 480px;
+  margin-bottom: 48px;
+}
+
+.shop-categories {
+  border-top: 1px solid #222;
+  margin-bottom: 40px;
+}
+
+.shop-cat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  border-bottom: 1px solid #222;
+}
+
+.shop-cat-left {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.shop-cat-name {
+  font-size: 15px;
+  color: #ccc;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.shop-cat-desc {
+  font-size: 13px;
+  color: #666;
+}
+
+.shop-cat-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.shop-cat-lock {
+  flex-shrink: 0;
+}
+
+.shop-cat-status {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .shop-inner {
+    padding: 40px 22px 64px;
+  }
+
+  .shop-cat-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .shop-cat-row {
+    align-items: flex-start;
+  }
+
+  .shop-cat-right {
+    padding-top: 2px;
+  }
+}
