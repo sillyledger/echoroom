@@ -1,9 +1,31 @@
 import Navbar from "./Navbar";
 
-const PLACEHOLDER_EPISODES = [
-  { number: "01" },
-  { number: "02" },
-  { number: "03" },
+const EPISODES = [
+  { number: "01", title: "This Is Echo Room" },
+  { number: "02", title: "Cities Make Us Lonelier, Not More Connected" },
+  { number: "03", title: "Moving Countries Rewires Who You Are" },
+  {
+    number: "04",
+    title: "Quitting a Stable Job Isn't Brave. It's Just a Different Risk.",
+  },
+  {
+    number: "05",
+    title:
+      "AI Won't Replace You, But It Will Expose What You Weren't Doing Well",
+  },
+  {
+    number: "06",
+    title: "Most People Don't Want Advice. They Want Permission.",
+  },
+  {
+    number: "07",
+    title: "Hustle Culture Is Mostly Sold By People Who Already Made It",
+  },
+  {
+    number: "08",
+    title:
+      "Most Startups Don't Fail Because of the Idea; They Fail Because of the Founder",
+  },
 ];
 
 export default function Episodes() {
@@ -24,13 +46,11 @@ export default function Episodes() {
         </p>
 
         <div className="episodes-list">
-          {PLACEHOLDER_EPISODES.map((ep) => (
+          {EPISODES.map((ep) => (
             <div className="episode-row" key={ep.number}>
               <div className="episode-row-left">
                 <span className="episode-number">{ep.number}</span>
-                <span className="episode-title">
-                  Episode title to be announced
-                </span>
+                <span className="episode-title">{ep.title}</span>
               </div>
               <div className="episode-row-right">
                 <svg
