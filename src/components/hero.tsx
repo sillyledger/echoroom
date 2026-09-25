@@ -22,10 +22,26 @@ export default function Hero() {
             needs to be said.
           </p>
           <div className="cta-row">
-            <a href="#" className="btn-primary">Listen now →</a>
-            <a href="/episodes" className="btn-secondary">Browse episodes</a>
+            <a href="#listen" className="btn-primary">
+              Listen now
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14" />
+                <path d="M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a href="/episodes" className="btn-secondary">
+              Browse episodes
+            </a>
           </div>
-          <div className="platforms">
+          <div className="platforms" id="listen">
             <span className="platforms-label">Listen on</span>
             <a href="#" className="pill">Spotify</a>
             <a href="#" className="pill">Apple Podcasts</a>
@@ -35,23 +51,24 @@ export default function Hero() {
         </div>
         <div className="hero-photo">
           <Image
-  src="/Pieter_Borremans.jpeg"
-  alt="Pieter Borremans - Echo Room"
-  fill
-  priority
-  quality={100}
-  sizes="100vw"
-  className="photo-img"
-/>
+            src="/Pieter_Borremans.jpeg"
+            alt="Pieter Borremans - Echo Room"
+            fill
+            priority
+            quality={90}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="photo-img"
+          />
           <div className="photo-blend" />
         </div>
       </div>
-      <div className="pull-quote">
+      <blockquote className="pull-quote">
         <span className="quote-mark">&ldquo;</span>
-        <p>Just me, talking.<br />No edits.<br />No agenda.<br />
+        <p>
+          Just me, talking.<br />No edits.<br />No agenda.<br />
           <span className="quote-red">Unfiltered.</span>&rdquo;
         </p>
-      </div>
+      </blockquote>
     </section>
   );
 }

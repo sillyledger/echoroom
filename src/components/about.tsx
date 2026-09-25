@@ -1,27 +1,37 @@
 import Image from "next/image";
 import Navbar from "./Navbar";
 
+// Profile URLs match the sameAs list in app/about/page.tsx
+const SOCIAL_LINKS = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/pieter-borremans/" },
+  { label: "Website", href: "https://pieterborremans.com" },
+  { label: "indiehacker.blog", href: "https://www.indiehacker.blog" },
+  { label: "YouTube", href: "https://www.youtube.com/@PieterBorremans" },
+];
+
 export default function About() {
   return (
     <section className="about">
       <Navbar />
 
       <div className="about-inner">
-        <div className="about-photo">
-          <Image
-            src="/Pieter_Borremans.jpeg"
-            alt="Pieter Borremans - Echo Room"
-            fill
-            priority
-            quality={100}
-            sizes="(max-width: 768px) 100vw, 40vw"
-            className="about-photo-img"
-          />
-          <div className="about-photo-blend" />
-        </div>
+        <figure className="about-figure">
+          <div className="about-photo">
+            <Image
+              src="/Pieter_Borremans.jpeg"
+              alt="Portrait of Pieter Borremans"
+              fill
+              priority
+              quality={90}
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="about-photo-img"
+            />
+          </div>
+          <figcaption className="about-caption">Host · Echo Room</figcaption>
+        </figure>
 
         <div className="about-text">
-          <div className="about-badge">About</div>
+          <p className="section-label about-badge">About</p>
           <h1>Pieter Borremans</h1>
           <p className="about-role">
             Writer, digital entrepreneur, and software founder. Born in
@@ -52,7 +62,7 @@ export default function About() {
               Most indie hacker content covers tactics and revenue. He writes
               about what it actually feels like.
             </p>
-            <p>
+            <p className="about-bio-close">
               Echo Room is where that same honesty moves from the page to a
               mic — one voice, no script, talking through whatever needs to
               be said.
@@ -77,10 +87,17 @@ export default function About() {
           <div className="about-social">
             <span className="about-social-label">Find him elsewhere</span>
             <div className="about-social-row">
-              <a href="#" className="about-social-icon" aria-label="LinkedIn">in</a>
-              <a href="#" className="about-social-icon" aria-label="X / Twitter">X</a>
-              <a href="#" className="about-social-icon" aria-label="Website">W</a>
-              <a href="#" className="about-social-icon" aria-label="Indie Hackers">IH</a>
+              {SOCIAL_LINKS.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="pill"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
           </div>
         </div>

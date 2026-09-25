@@ -1,66 +1,96 @@
 .episodes {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  background: #000;
+  background: var(--bg);
 }
 
 .episodes-inner {
-  max-width: 760px;
+  max-width: 1104px;
   margin: 0 auto;
-  padding: 60px 48px 96px;
+  padding: 96px var(--gutter) 120px;
 }
 
 .episodes-inner h1 {
-  font-size: clamp(34px, 4vw, 46px);
+  display: block;
+  font-size: clamp(56px, 7vw, 96px);
   font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.02em;
-  margin-bottom: 12px;
+  line-height: 0.95;
+  color: var(--text-strong);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .episodes-lede {
-  font-size: 15px;
-  color: #999;
+  font-size: 21px;
+  color: var(--text-body);
   line-height: 1.6;
-  max-width: 480px;
-  margin-bottom: 40px;
+  max-width: 680px;
+  margin-bottom: 64px;
+}
+
+.episodes-meta {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  font-family: var(--font-label);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
 }
 
 .episodes-list {
-  border-top: 1px solid #222;
+  list-style: none;
+  border-top: 1px solid var(--line-strong);
 }
 
 .episode-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto 96px;
   align-items: center;
-  justify-content: space-between;
-  padding: 18px 0;
-  border-bottom: 1px solid #222;
+  column-gap: 32px;
+  min-height: 96px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
 }
 
-.episode-row-left {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+.episode-row-first {
+  background: var(--surface);
+  border-radius: 4px;
+  border-bottom-color: var(--line-strong);
+  margin: 0 -28px;
+  padding: 16px 28px;
+  min-height: 104px;
 }
 
 .episode-number {
-  font-size: 13px;
-  color: #555;
-  width: 24px;
+  font-family: var(--font-label);
+  font-size: 17px;
+  color: var(--text-dim);
+}
+
+.episode-row-first .episode-number {
+  color: var(--accent-soft);
 }
 
 .episode-title {
-  font-size: 15px;
-  color: #666;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #ddd7ce;
 }
 
-.episode-row-right {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #666;
+.episode-row-first .episode-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.episode-status {
+  display: inline-flex;
+  justify-content: flex-end;
+  color: var(--text-dim);
 }
 
 .episode-lock {
@@ -68,16 +98,66 @@
 }
 
 .episode-date {
-  font-size: 12px;
-  letter-spacing: 0.05em;
+  font-family: var(--font-label);
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  text-align: right;
 }
+
+.episode-row-first .episode-date {
+  color: var(--text-muted);
+}
+
+/* up-first pill is defined in home.css */
 
 @media (max-width: 768px) {
   .episodes-inner {
-    padding: 40px 22px 64px;
+    padding: 48px var(--gutter) 72px;
   }
 
-  .episode-title {
-    font-size: 14px;
+  .episodes-lede {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  .episode-row {
+    grid-template-columns: 32px minmax(0, 1fr);
+    grid-template-areas:
+      "num title"
+      ". meta";
+    column-gap: 16px;
+    row-gap: 6px;
+    align-items: start;
+    min-height: 0;
+    padding: 20px 0;
+  }
+
+  .episode-row-first {
+    margin: 0 -14px;
+    padding: 20px 14px;
+    min-height: 0;
+  }
+
+  .episode-number {
+    grid-area: num;
+    font-size: 15px;
+    padding-top: 3px;
+  }
+
+  .episode-title,
+  .episode-row-first .episode-title {
+    grid-area: title;
+    font-size: 19px;
+  }
+
+  .episode-status {
+    display: none;
+  }
+
+  .episode-date {
+    grid-area: meta;
+    font-size: 13px;
+    text-align: left;
   }
 }

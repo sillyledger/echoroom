@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import Footer from "@/components/Footer";
 import "./globals.css";
 import "./hero.css";
+import "./home.css";
 import "./about.css";
 import "./episodes.css";
 import "./shop.css";
@@ -10,7 +12,15 @@ import "./topics.css";
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   variable: "--font-body",
+  display: "swap",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -29,14 +39,21 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
 };
 
+export const viewport = {
+  themeColor: "#161514",
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={ibmPlexSans.variable}>
-      <body>{children}</body>
+    <html lang="en" className={`${ibmPlexSans.variable} ${ibmPlexMono.variable}`}>
+      <body>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
