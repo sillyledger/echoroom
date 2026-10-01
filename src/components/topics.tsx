@@ -10,9 +10,9 @@ export default function Topics() {
         <h1>Topics</h1>
 
         <p className="topics-lede">
-          There&apos;s no fixed lineup yet — every episode pulls from
-          whatever&apos;s actually on my mind that week. Categories will
-          show up here once the first few episodes are out.
+          There&apos;s no fixed lineup yet. Every episode pulls from
+          whatever&apos;s on my mind that week. Categories will show up
+          here once the first few episodes are out.
         </p>
 
         <div className="cta-row">
