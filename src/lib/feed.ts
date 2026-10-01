@@ -1,5 +1,6 @@
 import { PLANNED_EPISODES, type PlannedEpisode } from "./episodes";
 import { PRIMARY_LISTEN_URL } from "./links";
+import { getSpotifyEpisodeLinks, normaliseTitle } from "./spotify";
 
 const FEED_URL = "https://anchor.fm/s/117fa1d0c/podcast/rss";
 
@@ -56,15 +57,17 @@ export async function getEpisodes(): Promise<Episode[]> {
     if (!res.ok) return [];
     const xml = await res.text();
     const items = xml.match(/<item>[\s\S]*?<\/item>/g) ?? [];
+    const spotify = await getSpotifyEpisodeLinks();
     return items.map((item, i) => {
+      const rawTitle = tag(item, "title") ?? "";
       const epTag = tag(item, "itunes:episode");
       const number = epTag && !Number.isNaN(Number(epTag)) ? Number(epTag) : items.length - i;
       return {
         number,
-        title: cleanTitle(tag(item, "title") ?? ""),
+        title: cleanTitle(rawTitle),
         date: formatDate(tag(item, "pubDate")),
         duration: formatDuration(tag(item, "itunes:duration")),
-        href: tag(item, "link") || PRIMARY_LISTEN_URL,
+        href: spotify.get(normaliseTitle(rawTitle)) || tag(item, "link") || PRIMARY_LISTEN_URL,
       };
     }).filter((e) => e.title);
   } catch {
