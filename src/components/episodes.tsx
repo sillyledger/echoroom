@@ -41,9 +41,6 @@ export default async function Episodes() {
 
         {soon.length > 0 && (
           <>
-            <div className="episodes-meta episodes-meta-soon">
-              <span>Coming up</span>
-            </div>
             <ol className="episodes-list episodes-list-soon">
               {soon.map((p) => (
                 <li key={p.number} className="episode-row episode-row-soon">

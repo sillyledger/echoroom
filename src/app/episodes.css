@@ -133,6 +133,7 @@
 .episodes-meta-soon { margin-top: 56px; }
 
 .episodes-list-soon { border-top: 1px dashed #2e2a26; }
+.episodes-list-soon { margin-top: 56px; }
 
 .episode-row-soon {
   grid-template-columns: 40px minmax(0, 1fr) auto;
