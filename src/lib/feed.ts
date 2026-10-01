@@ -32,7 +32,8 @@ export async function getLatestEpisode(): Promise<LatestEpisode | null> {
     const items = xml.match(/<item>[\s\S]*?<\/item>/g);
     if (!items || items.length === 0) return null;
     const first = items[0];
-    const title = tag(first, "title");
+    // Feed titles carry their own "EP 01 | " prefix; the card shows the number separately.
+    const title = tag(first, "title")?.replace(/^EP\s*\d+\s*[|:\-–—]\s*/i, "");
     if (!title) return null;
     const epTag = tag(first, "itunes:episode");
     const number = epTag && !Number.isNaN(Number(epTag)) ? Number(epTag) : items.length;
