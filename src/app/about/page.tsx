@@ -63,6 +63,7 @@ const personSchema = {
   sameAs: [
     "https://ryokagroup.com/founder",
     "https://pieterborremans.com",
+    "https://www.pieter.tw",
     "https://www.indiehacker.blog",
     "https://ryoka.xyz",
     "https://www.linkedin.com/in/pieter-borremans/",

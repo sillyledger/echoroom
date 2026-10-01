@@ -3,9 +3,10 @@ import Navbar from "./Navbar";
 
 // Profile URLs match the sameAs list in app/about/page.tsx
 const SOCIAL_LINKS = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/pieter-borremans/" },
-  { label: "Website", href: "https://pieterborremans.com" },
+  { label: "Personal blog", href: "https://pieterborremans.com" },
+  { label: "Life in Taiwan", href: "https://www.pieter.tw" },
   { label: "indiehacker.blog", href: "https://www.indiehacker.blog" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/pieter-borremans/" },
   { label: "YouTube", href: "https://www.youtube.com/@PieterBorremans" },
 ];
 
@@ -64,13 +65,7 @@ export default function About() {
               the decision fatigue, and the small wins that keep you going.
               Most indie hacker content covers tactics and revenue. He writes
               about what it actually feels like.
-            </p>
-            <p className="about-bio-close">
-              Echo Room is where that same honesty moves from the page to a
-              mic — one voice, no script, talking through whatever needs to
-              be said.
-            </p>
-          </div>
+            </p>          </div>
 
           <div className="about-stats">
             <div className="about-stat">
@@ -82,8 +77,8 @@ export default function About() {
               <span className="about-stat-value">Taichung · London</span>
             </div>
             <div className="about-stat about-stat-accent">
-              <span className="about-stat-label">Launching</span>
-              <span className="about-stat-value">September 2026</span>
+              <span className="about-stat-label">Launched</span>
+              <span className="about-stat-value">October 2026</span>
             </div>
           </div>
 
