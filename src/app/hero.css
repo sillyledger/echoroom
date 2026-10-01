@@ -495,11 +495,17 @@ h1 {
   .about .nav,
   .episodes .nav,
   .shop .nav,
-  .topics .nav {
+  .topics .nav,
+  .contact .nav,
+  .legal .nav {
     position: relative;
   }
 
-  .logo { font-size: 14px; }
+  .logo { font-size: 14px; display: inline-flex; align-items: center; min-height: 44px; }
+
+  /* Grow the "Also on" links' tap area to 44px without moving the underline */
+  .also-on a { position: relative; }
+  .also-on a::after { content: ""; position: absolute; left: 0; right: 0; top: -12px; bottom: -12px; }
 
   .nav-links { gap: 8px; }
   .nav-link { display: none; }

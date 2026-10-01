@@ -79,6 +79,8 @@
   object-fit: cover;
   object-position: 55% 40%;
   mix-blend-mode: lighten;
+  transform: scale(1.8);
+  transform-origin: 62% 42%;
 }
 
 .contact-who {
@@ -97,6 +99,8 @@
   color: var(--text-body);
   text-decoration: none;
   transition: color 0.2s;
+  padding: 10px 0;
+  margin: -10px 0;
 }
 
 .contact-email:hover { color: #fff; }
