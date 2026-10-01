@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: "Episodes", href: "/episodes" },
   { label: "About", href: "/about" },
   { label: "Topics", href: "/topics" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function Waveform() {
