@@ -8,6 +8,11 @@ export default function Footer() {
         <span className="footer-note">
           © {new Date().getFullYear()} Echo Room. One voice, no script.
         </span>
+        <nav className="footer-legal" aria-label="Legal">
+          <a href="/disclaimer">Disclaimer</a>
+          <span aria-hidden="true">·</span>
+          <a href="/privacy">Privacy</a>
+        </nav>
       </div>
       <nav className="footer-links" aria-label="Footer">
         <a href="/episodes">Episodes</a>

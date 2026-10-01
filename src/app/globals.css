@@ -172,3 +172,7 @@ a {
     gap: 20px;
   }
 }
+
+.footer-legal { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-dim); }
+.footer-legal a { color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+.footer-legal a:hover { color: var(--text); }

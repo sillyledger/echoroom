@@ -8,6 +8,7 @@ import "./about.css";
 import "./episodes.css";
 import "./shop.css";
 import "./topics.css";
+import "./legal.css";
 
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
