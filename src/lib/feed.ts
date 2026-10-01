@@ -1,8 +1,14 @@
+import { PLANNED_EPISODES, type PlannedEpisode } from "./episodes";
+import { PRIMARY_LISTEN_URL } from "./links";
+
 const FEED_URL = "https://anchor.fm/s/117fa1d0c/podcast/rss";
 
-export type LatestEpisode = {
+export type Episode = {
   number: number;
   title: string;
+  date: string;      // e.g. "Oct 1, 2026"
+  duration: string;  // e.g. "24 min" ("" if unknown)
+  href: string;
 };
 
 function decode(s: string): string {
@@ -22,23 +28,57 @@ function tag(xml: string, name: string): string | null {
   return m ? decode(m[1]) : null;
 }
 
-// Newest episode from the feed, refreshed at most once an hour.
-// Returns null on any failure so the hero can fall back gracefully.
-export async function getLatestEpisode(): Promise<LatestEpisode | null> {
+function cleanTitle(t: string): string {
+  return t.replace(/^EP\s*\d+\s*[|:\-–—]\s*/i, "").trim();
+}
+
+function formatDate(pub: string | null): string {
+  if (!pub) return "";
+  const d = new Date(pub);
+  if (Number.isNaN(d.getTime())) return "";
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+}
+
+function formatDuration(raw: string | null): string {
+  if (!raw) return "";
+  const parts = raw.split(":").map(Number);
+  if (parts.some((n) => Number.isNaN(n))) return "";
+  const secs = parts.length === 1 ? parts[0] : parts.reduce((acc, n) => acc * 60 + n, 0);
+  if (!secs) return "";
+  return `${Math.max(1, Math.round(secs / 60))} min`;
+}
+
+// All published episodes, newest first. Refreshed at most once an hour.
+// Returns [] on any failure so pages fall back gracefully.
+export async function getEpisodes(): Promise<Episode[]> {
   try {
     const res = await fetch(FEED_URL, { next: { revalidate: 3600 } });
-    if (!res.ok) return null;
+    if (!res.ok) return [];
     const xml = await res.text();
-    const items = xml.match(/<item>[\s\S]*?<\/item>/g);
-    if (!items || items.length === 0) return null;
-    const first = items[0];
-    // Feed titles carry their own "EP 01 | " prefix; the card shows the number separately.
-    const title = tag(first, "title")?.replace(/^EP\s*\d+\s*[|:\-–—]\s*/i, "");
-    if (!title) return null;
-    const epTag = tag(first, "itunes:episode");
-    const number = epTag && !Number.isNaN(Number(epTag)) ? Number(epTag) : items.length;
-    return { number, title };
+    const items = xml.match(/<item>[\s\S]*?<\/item>/g) ?? [];
+    return items.map((item, i) => {
+      const epTag = tag(item, "itunes:episode");
+      const number = epTag && !Number.isNaN(Number(epTag)) ? Number(epTag) : items.length - i;
+      return {
+        number,
+        title: cleanTitle(tag(item, "title") ?? ""),
+        date: formatDate(tag(item, "pubDate")),
+        duration: formatDuration(tag(item, "itunes:duration")),
+        href: tag(item, "link") || PRIMARY_LISTEN_URL,
+      };
+    }).filter((e) => e.title);
   } catch {
-    return null;
+    return [];
   }
+}
+
+export async function getLatestEpisode(): Promise<Episode | null> {
+  const eps = await getEpisodes();
+  return eps[0] ?? null;
+}
+
+// Planned episodes not yet in the feed (by number), in order.
+export function upcomingAfter(published: Episode[]): PlannedEpisode[] {
+  const maxPublished = published.reduce((m, e) => Math.max(m, e.number), 0);
+  return PLANNED_EPISODES.filter((p) => p.number > maxPublished);
 }

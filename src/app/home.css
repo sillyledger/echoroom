@@ -143,6 +143,44 @@
   color: #cfc8be;
 }
 
+.season-card-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.season-card-listen {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid #5a534b;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.season-card-listen:hover { color: #fff; border-color: var(--accent-soft); }
+
+.season-card-soon {
+  background: transparent;
+  border: 1px dashed var(--line-pill);
+}
+
+.season-card-soon-label {
+  font-family: var(--font-label);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.season-card-soon .season-card-title { color: #a9a197; }
+.season-card-soon .season-card-meta { color: #6e685f; }
+
 /* =================== TABLET =================== */
 @media (max-width: 1024px) {
   .season-grid {

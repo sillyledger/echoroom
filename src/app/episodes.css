@@ -111,6 +111,38 @@
 
 /* up-first pill is defined in home.css */
 
+.episode-row { grid-template-columns: 40px minmax(0, 1fr) auto 90px; }
+
+.episode-row .episode-number { color: var(--accent-soft); }
+.episode-row .episode-title { color: var(--text-strong); font-weight: 600; }
+
+.episode-listen {
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.episode-listen:hover { color: #fff; }
+
+.episodes-meta-soon { margin-top: 56px; }
+
+.episodes-list-soon { border-top: 1px dashed #2e2a26; }
+
+.episode-row-soon {
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  border-bottom: 1px dashed #2e2a26;
+}
+
+.episode-row-soon .episode-number { color: #6e685f; }
+.episode-row-soon .episode-title { color: #a9a197; font-weight: 500; }
+.episode-row-soon .episode-date { color: #6e685f; text-transform: uppercase; letter-spacing: 0.1em; font-size: 13px; }
+
 @media (max-width: 768px) {
   .episodes-inner {
     padding: 48px var(--gutter) 72px;
@@ -159,5 +191,22 @@
     grid-area: meta;
     font-size: 13px;
     text-align: left;
+  }
+
+  /* Published rows: date, then Listen on its own row below it */
+  .episode-row {
+    grid-template-areas:
+      "num title"
+      ". meta"
+      ". listen";
+  }
+
+  .episode-listen { grid-area: listen; justify-content: flex-start; }
+
+  .episode-row-soon {
+    grid-template-columns: 32px minmax(0, 1fr);
+    grid-template-areas:
+      "num title"
+      ". meta";
   }
 }

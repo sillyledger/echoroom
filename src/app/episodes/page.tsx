@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Episodes from "@/components/episodes";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Episodes | Echo Room",
   description:
