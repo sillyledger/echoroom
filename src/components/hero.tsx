@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Navbar from "./Navbar";
+import { PLATFORM_LINKS, PRIMARY_LISTEN_URL } from "@/lib/links";
 
 export default function Hero() {
   return (
@@ -22,7 +23,12 @@ export default function Hero() {
             needs to be said.
           </p>
           <div className="cta-row">
-            <a href="#listen" className="btn-primary">
+            <a
+              href={PRIMARY_LISTEN_URL}
+              className="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Listen now
               <svg
                 width="16"
@@ -43,10 +49,9 @@ export default function Hero() {
           </div>
           <div className="platforms" id="listen">
             <span className="platforms-label">Listen on</span>
-            <a href="#" className="pill">Spotify</a>
-            <a href="#" className="pill">Apple Podcasts</a>
-            <a href="#" className="pill">YouTube</a>
-            <a href="#" className="pill">Amazon Music</a>
+            {PLATFORM_LINKS.map((p) => (
+              <a key={p.label} href={p.href} className="pill" target="_blank" rel="noopener noreferrer">{p.label}</a>
+            ))}
           </div>
         </div>
         <div className="hero-photo">

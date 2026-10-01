@@ -1,3 +1,5 @@
+import { PLATFORM_LINKS } from "@/lib/links";
+
 export default function Footer() {
   return (
     <footer className="site-footer">
@@ -10,7 +12,11 @@ export default function Footer() {
       <nav className="footer-links" aria-label="Footer">
         <a href="/episodes">Episodes</a>
         <a href="/about">About</a>
-        <a href="/#listen">Listen</a>
+        {PLATFORM_LINKS.map((p) => (
+          <a key={p.label} href={p.href} target="_blank" rel="noopener noreferrer">
+            {p.label}
+          </a>
+        ))}
       </nav>
     </footer>
   );
