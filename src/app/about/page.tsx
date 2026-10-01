@@ -57,7 +57,7 @@ const personSchema = {
     name: "Ryoka Group",
   },
   homeLocation: [
-    { "@type": "Place", name: "Taipei, Taiwan" },
+    { "@type": "Place", name: "Taichung, Taiwan" },
     { "@type": "Place", name: "London, United Kingdom" },
   ],
   sameAs: [

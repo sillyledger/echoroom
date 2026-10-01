@@ -35,7 +35,7 @@ export default function About() {
           <h1>Pieter Borremans</h1>
           <p className="about-role">
             Writer, digital entrepreneur, and software founder. Born in
-            Indonesia, raised in Belgium, based between Taipei and London.
+            Indonesia, raised in Belgium, based between Taichung and London.
           </p>
 
           <div className="about-divider" />
@@ -43,10 +43,13 @@ export default function About() {
           <p className="about-section-label">Biography</p>
           <div className="about-bio">
             <p>
-              Pieter Borremans is the founder of Ryoka Group, a company that
-              builds, operates, and invests in software products. He has spent
-              25 years living and working across countries, a restlessness
-              that shaped everything he does now.
+              Pieter Borremans is the founder of{" "}
+              <a href="https://www.ryokagroup.com" className="about-inline-link" target="_blank" rel="noopener noreferrer">Ryoka Group</a>,
+              a holding company with a portfolio of software, media, and publishing brands. Its day-to-day
+              operations, from active development to portfolio management, run through{" "}
+              <a href="https://www.onpointvc.com" className="about-inline-link" target="_blank" rel="noopener noreferrer">OnPoint VC</a>,
+              its operating engine. He has spent 25 years living and working across countries, a
+              restlessness that shaped everything he does now.
             </p>
             <p>
               He started his first business at 22 and sold it almost fifteen
@@ -76,7 +79,7 @@ export default function About() {
             </div>
             <div className="about-stat">
               <span className="about-stat-label">Based</span>
-              <span className="about-stat-value">Taipei — London</span>
+              <span className="about-stat-value">Taichung · London</span>
             </div>
             <div className="about-stat about-stat-accent">
               <span className="about-stat-label">Launching</span>
