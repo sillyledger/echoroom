@@ -77,6 +77,59 @@
   color: #fff;
 }
 
+.nav-listen { font-family: inherit; cursor: pointer; }
+
+.listen-wrap { position: relative; }
+
+.listen-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 30;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.listen-menu-label {
+  padding: 10px 14px 6px;
+  font-family: var(--font-label);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.listen-menu a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 46px;
+  padding: 0 14px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.listen-menu a svg { color: var(--text-dim); flex-shrink: 0; }
+
+.listen-menu a:hover,
+.listen-menu a:focus-visible {
+  background: rgba(237, 233, 227, 0.06);
+  color: #fff;
+}
+
+.listen-menu a:hover svg { color: var(--accent-soft); }
+
 .waveform {
   fill: var(--accent);
   flex-shrink: 0;
@@ -335,6 +388,8 @@ h1 {
 
 /* =================== MOBILE =================== */
 @media (max-width: 768px) {
+  .listen-menu { min-width: 220px; }
+
   .hero {
     height: auto;
     min-height: 100svh;

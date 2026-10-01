@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import { PLATFORM_LINKS } from "@/lib/links";
 
 const NAV_LINKS = [
   { label: "Episodes", href: "/episodes" },
@@ -30,6 +31,22 @@ function Waveform() {
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [listenOpen, setListenOpen] = useState(false);
+  const listenRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!listenOpen) return;
+    const onClick = (e: MouseEvent) => {
+      if (listenRef.current && !listenRef.current.contains(e.target as Node)) setListenOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setListenOpen(false); };
+    document.addEventListener("mousedown", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [listenOpen]);
 
   return (
     <nav className="nav" aria-label="Main">
@@ -51,17 +68,39 @@ export default function Navbar() {
             </a>
           );
         })}
-        <a href="/#listen" className="nav-listen">
-          Listen
-          <Waveform />
-        </a>
+        <div className="listen-wrap" ref={listenRef}>
+          <button
+            type="button"
+            className="nav-listen"
+            aria-haspopup="true"
+            aria-expanded={listenOpen}
+            aria-controls="listen-menu"
+            onClick={() => { setListenOpen((v) => !v); setOpen(false); }}
+          >
+            Listen
+            <Waveform />
+          </button>
+          {listenOpen && (
+            <div id="listen-menu" className="listen-menu">
+              <span className="listen-menu-label">Listen on</span>
+              {PLATFORM_LINKS.map((p) => (
+                <a key={p.label} href={p.href} target="_blank" rel="noopener noreferrer" onClick={() => setListenOpen(false)}>
+                  {p.label}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                    <path d="M7 17L17 7" /><path d="M8 7h9v9" />
+                  </svg>
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
         <button
           type="button"
           className="nav-menu-btn"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="mobile-menu"
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => { setOpen((v) => !v); setListenOpen(false); }}
         >
           <svg
             width="18"

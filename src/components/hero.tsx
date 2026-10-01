@@ -8,10 +8,6 @@ export default function Hero() {
       <Navbar />
       <div className="hero-inner">
         <div className="hero-text">
-          <div className="launch-badge">
-            <span className="launch-dot" />
-            Launching September 2026
-          </div>
           <h1>
             <span className="title-white">Echo</span>
             <span className="title-red">Room</span>

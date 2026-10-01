@@ -12,10 +12,6 @@ export default function Shop() {
       <Navbar />
 
       <div className="shop-inner">
-        <div className="launch-badge">
-          <span className="launch-dot" />
-          Shop opens at launch
-        </div>
 
         <h1>
           <span className="title-white">COMING</span>

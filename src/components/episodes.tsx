@@ -7,10 +7,6 @@ export default function Episodes() {
       <Navbar />
 
       <div className="episodes-inner">
-        <div className="launch-badge">
-          <span className="launch-dot" />
-          Launching September 2026
-        </div>
 
         <h1>Episodes</h1>
         <p className="episodes-lede">

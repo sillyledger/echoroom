@@ -6,10 +6,6 @@ export default function Topics() {
       <Navbar />
 
       <div className="topics-inner">
-        <div className="launch-badge">
-          <span className="launch-dot" />
-          Full lineup at launch
-        </div>
 
         <h1>Topics</h1>
 
