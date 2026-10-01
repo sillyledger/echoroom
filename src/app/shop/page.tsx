@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://echoroom.xyz/shop",
   },
+  robots: { index: false, follow: true },
   openGraph: {
     title: "Shop | Echo Room",
     description:
