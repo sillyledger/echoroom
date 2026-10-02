@@ -20,7 +20,7 @@ export default function HostStrip() {
           </h2>
           <p className="host-bio">
             Founder of Ryoka Group. Writes about the psychological and
-            emotional side of building alone — the burnout, the loneliness,
+            emotional side of building alone: the burnout, the loneliness,
             the decision fatigue, and the small wins that keep you going.
             Echo Room is where that honesty moves from the page to a mic.
           </p>

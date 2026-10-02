@@ -20,7 +20,7 @@ export default function Shop() {
 
         <p className="shop-lede">
           Merch, prints, and a few physical extensions of the show.
-          Nothing&apos;s for sale yet — this page updates the moment it is.
+          Nothing&apos;s for sale yet. This page updates the moment it is.
         </p>
 
         <div className="shop-categories">
