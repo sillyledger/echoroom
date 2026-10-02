@@ -3,16 +3,16 @@ import { OG_IMAGE } from "@/lib/og";
 import About from "@/components/about";
 
 export const metadata: Metadata = {
-  title: "Pieter Borremans | Host of Echo Room",
+  title: "Pieter Borremans | Host of Echo Room, solo monologue podcast",
   description:
-    "Pieter Borremans, host of Echo Room: a solo monologue podcast on building alone, moving countries and the honest side of work and life.",
+    "Pieter Borremans is a writer and software founder behind Ryoka Group, born in Indonesia and raised in Belgium. He hosts Echo Room, a solo monologue podcast.",
   alternates: {
     canonical: "https://www.echoroom.xyz/about",
   },
   openGraph: {
-    title: "Pieter Borremans | Host of Echo Room",
+    title: "Pieter Borremans | Host of Echo Room, solo monologue podcast",
     description:
-      "Pieter Borremans, host of Echo Room: a solo monologue podcast on building alone, moving countries and the honest side of work and life.",
+      "Pieter Borremans is a writer and software founder behind Ryoka Group, born in Indonesia and raised in Belgium. He hosts Echo Room, a solo monologue podcast.",
     url: "https://www.echoroom.xyz/about",
     siteName: "Echo Room",
     type: "profile",
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pieter Borremans | Host of Echo Room",
+    title: "Pieter Borremans | Host of Echo Room, solo monologue podcast",
     description:
-      "Pieter Borremans, host of Echo Room: a solo monologue podcast on building alone, moving countries and the honest side of work and life.",
+      "Pieter Borremans is a writer and software founder behind Ryoka Group, born in Indonesia and raised in Belgium. He hosts Echo Room, a solo monologue podcast.",
     images: [OG_IMAGE],
   },
 };
