@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { OG_IMAGE } from "@/lib/og";
 import Shop from "@/components/shop";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Shop | Echo Room",
   description:

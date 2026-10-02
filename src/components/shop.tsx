@@ -1,4 +1,6 @@
 import Navbar from "./Navbar";
+import { getLatestEpisode } from "@/lib/feed";
+import { PRIMARY_LISTEN_URL } from "@/lib/links";
 
 const CATEGORIES = [
   { name: "Apparel", desc: "Tees & hoodies" },
@@ -6,7 +8,10 @@ const CATEGORIES = [
   { name: "Digital", desc: "Transcripts & bonus audio" },
 ];
 
-export default function Shop() {
+export default async function Shop() {
+  const latest = await getLatestEpisode();
+  const listenHref = latest?.href?.startsWith("https://open.spotify.com/") ? latest.href : PRIMARY_LISTEN_URL;
+
   return (
     <section className="shop">
       <Navbar />
@@ -54,7 +59,7 @@ export default function Shop() {
           <a href="/episodes" className="btn-primary">
             Browse Episodes →
           </a>
-          <a href="/#listen" className="btn-secondary">
+          <a href={listenHref} className="btn-secondary" target="_blank" rel="noopener noreferrer">
             Listen Now
           </a>
         </div>

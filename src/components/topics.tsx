@@ -1,6 +1,11 @@
 import Navbar from "./Navbar";
+import { getLatestEpisode } from "@/lib/feed";
+import { PRIMARY_LISTEN_URL } from "@/lib/links";
 
-export default function Topics() {
+export default async function Topics() {
+  const latest = await getLatestEpisode();
+  const listenHref = latest?.href?.startsWith("https://open.spotify.com/") ? latest.href : PRIMARY_LISTEN_URL;
+
   return (
     <section className="topics">
       <Navbar />
@@ -19,7 +24,7 @@ export default function Topics() {
           <a href="/episodes" className="btn-primary">
             Browse Episodes →
           </a>
-          <a href="/#listen" className="btn-secondary">
+          <a href={listenHref} className="btn-secondary" target="_blank" rel="noopener noreferrer">
             Listen Now
           </a>
         </div>

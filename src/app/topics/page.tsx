@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { OG_IMAGE } from "@/lib/og";
 import Topics from "@/components/topics";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Topics | Echo Room, a solo monologue podcast",
   description:
