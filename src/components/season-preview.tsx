@@ -37,7 +37,9 @@ export default async function SeasonPreview() {
               {i === 0 && <span className="up-first">New</span>}
             </div>
             <div>
-              <h3 className="season-card-title">{ep.title}</h3>
+              <h3 className="season-card-title">
+                {ep.slug ? <a href={`/episodes/${ep.slug}`} className="season-card-title-link">{ep.title}</a> : ep.title}
+              </h3>
               <div className="season-card-foot">
                 <p className="season-card-meta">
                   {[ep.date, ep.duration].filter(Boolean).join(" · ")}

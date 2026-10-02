@@ -62,6 +62,11 @@ export default function PrivacyPage() {
           those platforms, apart from anonymous, aggregated listening
           statistics that podcast hosts normally see.
         </p>
+        <p>
+          Episode pages include a Spotify player that only loads when you press
+          play. Until then, no data is sent to Spotify. Once it loads,
+          Spotify&apos;s own privacy policy and cookies apply.
+        </p>
 
         <h2>Sharing your information</h2>
         <p>

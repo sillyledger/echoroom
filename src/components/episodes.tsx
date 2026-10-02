@@ -23,7 +23,9 @@ export default async function Episodes() {
               {published.map((ep, i) => (
                 <li key={ep.number} className={`episode-row${i === 0 ? " episode-row-first" : ""}`}>
                   <span className="episode-number">{pad(ep.number)}</span>
-                  <span className="episode-title">{ep.title}</span>
+                  <span className="episode-title">
+                    {ep.slug ? <a href={`/episodes/${ep.slug}`} className="episode-title-link">{ep.title}</a> : ep.title}
+                  </span>
                   <span className="episode-date">
                     {[ep.date, ep.duration].filter(Boolean).join(" · ")}
                   </span>

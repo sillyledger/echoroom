@@ -497,7 +497,8 @@ h1 {
   .shop .nav,
   .topics .nav,
   .contact .nav,
-  .legal .nav {
+  .legal .nav,
+  .episode-page .nav {
     position: relative;
   }
 

@@ -1,0 +1,297 @@
+/* =================== EPISODE PAGE (/episodes/[slug]) =================== */
+.episode-page { position: relative; width: 100%; background: var(--bg); }
+
+.episode-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 64px var(--gutter) 120px;
+}
+
+.episode-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-bottom: 32px;
+  font-size: 15px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.episode-back:hover { color: #fff; }
+
+.episode-meta {
+  font-family: var(--font-label);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 18px;
+}
+
+.episode-meta-item { white-space: nowrap; }
+.episode-season { color: var(--accent-soft); }
+
+.episode-inner h1 {
+  display: block;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  text-transform: none;
+  color: var(--text-strong);
+  margin-bottom: 36px;
+}
+
+/* Click-to-load Spotify player */
+.player-card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid #2e2a26;
+  border-radius: 8px;
+  font-family: inherit;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.player-card:hover { border-color: #45403a; }
+
+.player-photo {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.player-photo-img {
+  object-fit: cover;
+  object-position: 55% 40%;
+  mix-blend-mode: lighten;
+}
+
+.player-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.player-label {
+  font-family: var(--font-label);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+}
+
+.player-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-strong);
+}
+
+.player-note {
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+.player-play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.player-play svg { margin-left: 3px; }
+
+.player-card:hover .player-play { background: var(--accent-hover); }
+
+/* Also on */
+.episode-also {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0 56px;
+}
+
+.episode-also-label {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-right: 4px;
+}
+
+.episode-also a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--line-pill);
+  border-radius: 999px;
+  font-size: 14px;
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.episode-also a svg { color: var(--text-dim); }
+
+.episode-also a:hover { border-color: #5a534b; color: #fff; }
+
+/* Notes */
+.episode-notes-label {
+  font-family: var(--font-label);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  margin-bottom: 18px;
+}
+
+.episode-notes ul { list-style: none; padding: 0; }
+
+.episode-notes li,
+.episode-notes p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--text-read);
+}
+
+.episode-notes li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 14px;
+}
+
+.episode-notes li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--accent-soft);
+}
+
+.episode-notes p { margin-bottom: 16px; }
+
+.episode-notes a {
+  color: var(--text-strong);
+  text-decoration: underline;
+  text-decoration-color: #5a534b;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+
+.episode-notes a:hover { color: #fff; text-decoration-color: var(--accent-soft); }
+
+.episode-notes h2,
+.episode-notes h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-strong);
+  margin: 32px 0 12px;
+}
+
+/* Closing row */
+.episode-closing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.episode-closing-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 22px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: inherit;
+  text-decoration: none;
+}
+
+a.episode-closing-card { transition: border-color 0.2s; }
+a.episode-closing-card:hover { border-color: #45403a; }
+
+.episode-closing-label {
+  font-family: var(--font-label);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+}
+
+.episode-closing-title {
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text-strong);
+}
+
+.episode-closing-text { font-size: 16px; color: var(--text-body); }
+
+.episode-closing-strong { font-size: 18px; font-weight: 600; color: var(--text-strong); }
+
+.episode-closing-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.episode-closing-link:hover { color: #fff; }
+
+/* Title links from the episode lists (home section and /episodes) */
+.episode-title-link,
+.season-card-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.episode-title-link:hover,
+.season-card-title-link:hover {
+  text-decoration: underline;
+  text-decoration-color: #5a534b;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+@media (max-width: 768px) {
+  .episode-inner { padding: 24px var(--gutter) 72px; }
+  .episode-notes li,
+  .episode-notes p { font-size: 17px; }
+  .episode-closing { grid-template-columns: 1fr; }
+  .player-card { padding: 16px; gap: 16px; }
+  .player-photo { width: 72px; height: 72px; }
+  .player-play { width: 52px; height: 52px; }
+  .player-title { font-size: 18px; }
+  .episode-also a { height: 44px; }
+}

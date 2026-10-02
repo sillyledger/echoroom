@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next";
+import { getEpisodeNotes } from "@/lib/notes";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.echoroom.xyz";
+  const notes = await getEpisodeNotes();
 
   return [
     {
@@ -46,5 +48,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+    ...notes.map((n) => ({
+      url: `${baseUrl}/episodes/${n.slug}`,
+      lastModified: n.publishedAt ? new Date(n.publishedAt) : new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
   ];
 }
