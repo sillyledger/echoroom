@@ -6,14 +6,14 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Episodes | Echo Room",
   description:
-    "Echo Room episodes, launching September 2026. One voice, no script, no exit.",
+    "Every Echo Room episode, newest first. One voice, no script.",
   alternates: {
     canonical: "https://www.echoroom.xyz/episodes",
   },
   openGraph: {
     title: "Episodes | Echo Room",
     description:
-      "Echo Room episodes, launching September 2026. One voice, no script, no exit.",
+      "Every Echo Room episode, newest first. One voice, no script.",
     url: "https://www.echoroom.xyz/episodes",
     siteName: "Echo Room",
     type: "website",

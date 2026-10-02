@@ -4,14 +4,14 @@ import About from "@/components/about";
 export const metadata: Metadata = {
   title: "Pieter Borremans — Host of Echo Room",
   description:
-    "Pieter Borremans is the founder of Ryoka Group and host of Echo Room, a monologue podcast launching September 2026.",
+    "Pieter Borremans, host of Echo Room: a solo monologue podcast on building alone, moving countries and the honest side of work and life.",
   alternates: {
     canonical: "https://www.echoroom.xyz/about",
   },
   openGraph: {
     title: "Pieter Borremans — Host of Echo Room",
     description:
-      "Founder of Ryoka Group and host of Echo Room, a monologue podcast launching September 2026.",
+      "Pieter Borremans, host of Echo Room: a solo monologue podcast on building alone, moving countries and the honest side of work and life.",
     url: "https://www.echoroom.xyz/about",
     siteName: "Echo Room",
     type: "profile",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pieter Borremans — Host of Echo Room",
     description:
-      "Founder of Ryoka Group and host of Echo Room, a monologue podcast launching September 2026.",
+      "Pieter Borremans, host of Echo Room: a solo monologue podcast on building alone, moving countries and the honest side of work and life.",
     images: ["https://www.echoroom.xyz/Pieter_Borremans.jpeg"],
   },
 };
