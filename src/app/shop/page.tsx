@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description:
     "Echo Room merch, prints, and digital extras — coming soon.",
   alternates: {
-    canonical: "https://echoroom.xyz/shop",
+    canonical: "https://www.echoroom.xyz/shop",
   },
   robots: { index: false, follow: true },
   openGraph: {
     title: "Shop | Echo Room",
     description:
       "Echo Room merch, prints, and digital extras — coming soon.",
-    url: "https://echoroom.xyz/shop",
+    url: "https://www.echoroom.xyz/shop",
     siteName: "Echo Room",
     type: "website",
   },

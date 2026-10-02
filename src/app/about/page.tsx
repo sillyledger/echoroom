@@ -6,18 +6,18 @@ export const metadata: Metadata = {
   description:
     "Pieter Borremans is the founder of Ryoka Group and host of Echo Room, a monologue podcast launching September 2026.",
   alternates: {
-    canonical: "https://echoroom.xyz/about",
+    canonical: "https://www.echoroom.xyz/about",
   },
   openGraph: {
     title: "Pieter Borremans — Host of Echo Room",
     description:
       "Founder of Ryoka Group and host of Echo Room, a monologue podcast launching September 2026.",
-    url: "https://echoroom.xyz/about",
+    url: "https://www.echoroom.xyz/about",
     siteName: "Echo Room",
     type: "profile",
     images: [
       {
-        url: "https://echoroom.xyz/Pieter_Borremans.jpeg",
+        url: "https://www.echoroom.xyz/Pieter_Borremans.jpeg",
         width: 1200,
         height: 1200,
         alt: "Pieter Borremans, host of Echo Room",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Pieter Borremans — Host of Echo Room",
     description:
       "Founder of Ryoka Group and host of Echo Room, a monologue podcast launching September 2026.",
-    images: ["https://echoroom.xyz/Pieter_Borremans.jpeg"],
+    images: ["https://www.echoroom.xyz/Pieter_Borremans.jpeg"],
   },
 };
 
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 // treats both pages as describing the same Person, not two separate ones.
 // Keep sameAs, jobTitle, and description in sync with ryokagroup.com,
 // pieterborremans.com, and indiehacker.blog.
-// TODO: once this is live, add "https://echoroom.xyz" to the sameAs list
+// TODO: once this is live, add "https://www.echoroom.xyz" to the sameAs list
 // on ryokagroup.com/founder so the link resolves both directions.
 const personSchema = {
   "@context": "https://schema.org",
@@ -49,8 +49,8 @@ const personSchema = {
   jobTitle: "Founder",
   description:
     "Pieter Borremans is the founder of Ryoka Group and host of Echo Room, a monologue podcast. A writer, digital entrepreneur, and software founder who builds, operates, and invests in software products.",
-  image: "https://echoroom.xyz/Pieter_Borremans.jpeg",
-  url: "https://echoroom.xyz/about",
+  image: "https://www.echoroom.xyz/Pieter_Borremans.jpeg",
+  url: "https://www.echoroom.xyz/about",
   worksFor: {
     "@type": "Organization",
     "@id": "https://ryokagroup.com/#organization",
@@ -76,9 +76,9 @@ const personSchema = {
 const podcastSchema = {
   "@context": "https://schema.org",
   "@type": "PodcastSeries",
-  "@id": "https://echoroom.xyz/#podcast",
+  "@id": "https://www.echoroom.xyz/#podcast",
   name: "Echo Room",
-  url: "https://echoroom.xyz",
+  url: "https://www.echoroom.xyz",
   description:
     "One voice. No script. No exit. Raw thoughts, uncut conversations, and the kind of honesty that doesn't fit anywhere else.",
   author: {

@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "What Echo Room covers — full topic lineup coming at launch.",
   alternates: {
-    canonical: "https://echoroom.xyz/topics",
+    canonical: "https://www.echoroom.xyz/topics",
   },
   openGraph: {
     title: "Topics | Echo Room",
     description:
       "What Echo Room covers — full topic lineup coming at launch.",
-    url: "https://echoroom.xyz/topics",
+    url: "https://www.echoroom.xyz/topics",
     siteName: "Echo Room",
     type: "website",
   },

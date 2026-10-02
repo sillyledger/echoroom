@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description:
     "Echo Room episodes, launching September 2026. One voice, no script, no exit.",
   alternates: {
-    canonical: "https://echoroom.xyz/episodes",
+    canonical: "https://www.echoroom.xyz/episodes",
   },
   openGraph: {
     title: "Episodes | Echo Room",
     description:
       "Echo Room episodes, launching September 2026. One voice, no script, no exit.",
-    url: "https://echoroom.xyz/episodes",
+    url: "https://www.echoroom.xyz/episodes",
     siteName: "Echo Room",
     type: "website",
   },

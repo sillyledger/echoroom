@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "How Echo Room handles your information: no accounts, no ads, no tracking cookies, and no selling of personal data.",
   alternates: {
-    canonical: "https://echoroom.xyz/privacy",
+    canonical: "https://www.echoroom.xyz/privacy",
   },
 };
 

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Echo Room is for information and entertainment only, not professional advice. Includes our affiliate disclosure.",
   alternates: {
-    canonical: "https://echoroom.xyz/disclaimer",
+    canonical: "https://www.echoroom.xyz/disclaimer",
   },
 };
 

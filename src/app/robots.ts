@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://echoroom.xyz/sitemap.xml",
+    sitemap: "https://www.echoroom.xyz/sitemap.xml",
   };
 }

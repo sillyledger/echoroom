@@ -27,7 +27,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://echoroom.xyz"),
+  metadataBase: new URL("https://www.echoroom.xyz"),
   title: "Echo Room",
   description: "One voice. No script. No exit.",
   icons: {
