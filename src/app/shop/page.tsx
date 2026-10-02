@@ -4,7 +4,7 @@ import Shop from "@/components/shop";
 export const metadata: Metadata = {
   title: "Shop | Echo Room",
   description:
-    "Echo Room merch, prints, and digital extras — coming soon.",
+    "Echo Room merch, prints, and digital extras | coming soon.",
   alternates: {
     canonical: "https://www.echoroom.xyz/shop",
   },
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Shop | Echo Room",
     description:
-      "Echo Room merch, prints, and digital extras — coming soon.",
+      "Echo Room merch, prints, and digital extras | coming soon.",
     url: "https://www.echoroom.xyz/shop",
     siteName: "Echo Room",
     type: "website",
