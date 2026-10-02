@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGE } from "@/lib/og";
 import About from "@/components/about";
 
 export const metadata: Metadata = {
@@ -15,21 +16,14 @@ export const metadata: Metadata = {
     url: "https://www.echoroom.xyz/about",
     siteName: "Echo Room",
     type: "profile",
-    images: [
-      {
-        url: "https://www.echoroom.xyz/Pieter_Borremans.jpeg",
-        width: 1200,
-        height: 1200,
-        alt: "Pieter Borremans, host of Echo Room",
-      },
-    ],
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: "Pieter Borremans | Host of Echo Room",
     description:
       "Pieter Borremans, host of Echo Room: a solo monologue podcast on building alone, moving countries and the honest side of work and life.",
-    images: ["https://www.echoroom.xyz/Pieter_Borremans.jpeg"],
+    images: [OG_IMAGE],
   },
 };
 

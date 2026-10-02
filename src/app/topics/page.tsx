@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGE } from "@/lib/og";
 import Topics from "@/components/topics";
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     url: "https://www.echoroom.xyz/topics",
     siteName: "Echo Room",
     type: "website",
+    images: [OG_IMAGE],
   },
 };
 

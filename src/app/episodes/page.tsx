@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGE } from "@/lib/og";
 import Episodes from "@/components/episodes";
 
 export const revalidate = 3600;
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     url: "https://www.echoroom.xyz/episodes",
     siteName: "Echo Room",
     type: "website",
+    images: [OG_IMAGE],
   },
 };
 

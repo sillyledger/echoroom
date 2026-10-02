@@ -13,7 +13,7 @@ export default async function Hero() {
       <div className="hero-inner">
         <div className="hero-text">
           <h1>
-            <span className="title-white">Echo</span>
+            <span className="title-white">Echo</span>{" "}
             <span className="title-red">Room</span>
           </h1>
           <p className="tagline">One voice. No script. No exit.</p>
