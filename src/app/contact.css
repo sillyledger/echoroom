@@ -5,8 +5,8 @@
   padding-bottom: 120px;
 }
 
-.contact-inner > * {
-  max-width: 760px;
+.contact-inner.container {
+  max-width: calc(760px + 2 * var(--gutter));
 }
 
 .contact-label { margin-bottom: 16px; }

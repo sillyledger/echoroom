@@ -10,8 +10,8 @@
   padding-bottom: 120px;
 }
 
-.shop-inner > * {
-  max-width: 640px;
+.shop-inner.container {
+  max-width: calc(640px + 2 * var(--gutter));
 }
 
 .shop-inner h1 {

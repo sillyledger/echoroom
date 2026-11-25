@@ -10,8 +10,8 @@
   padding-bottom: 120px;
 }
 
-.topics-inner > * {
-  max-width: 640px;
+.topics-inner.container {
+  max-width: calc(640px + 2 * var(--gutter));
 }
 
 .topics-inner h1 {

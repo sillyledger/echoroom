@@ -4,8 +4,8 @@
 
 /* ---------- Hero ---------- */
 .landing-hero {
-  min-height: calc(100vh - var(--top-bar));
-  min-height: calc(100svh - var(--top-bar));
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
 }
@@ -144,7 +144,6 @@
 
 /* ---------- Ladder ---------- */
 .ladder {
-  border-top: 1px solid var(--border);
   padding: 120px 0 128px;
 }
 

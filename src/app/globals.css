@@ -39,7 +39,6 @@
   /* Shape */
   --radius-btn: 10px;
   --radius-card: 14px;
-  --top-bar: 4px;
 
   /* Layout */
   --container: 1200px;
@@ -66,11 +65,6 @@ html, body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* 4px coral bar across the very top of every page */
-body {
-  border-top: var(--top-bar) solid var(--accent);
 }
 
 a {
@@ -332,46 +326,52 @@ h3 {
 
 /* =================== FOOTER (every page) =================== */
 .site-footer {
-  border-top: 1px solid var(--border);
-  padding: 56px 0 40px;
+  padding: 56px 0 48px;
   scroll-margin-top: 24px;
 }
 
 .site-footer-inner {
-  display: grid;
-  grid-template-columns: auto auto 1fr;
-  gap: 40px 64px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.footer-groups {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  margin-bottom: 28px;
 }
 
 .footer-col {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  gap: 12px;
 }
 
-.footer-col .label {
-  margin-bottom: 4px;
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px 12px;
+  font-size: 16px;
+  color: var(--muted-2);
 }
 
 .footer-col a {
   font-size: 16px;
   color: var(--text);
   text-decoration: none;
-  width: fit-content;
   transition: color 0.2s;
 }
 
 .footer-col a:hover {
   color: var(--accent);
-}
-
-.footer-side {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-  text-align: right;
 }
 
 .footer-note {
@@ -381,8 +381,10 @@ h3 {
 
 .footer-legal {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 4px 10px;
   font-size: 13px;
   color: var(--muted-2);
 }
@@ -454,15 +456,14 @@ h3 {
     padding: 40px 0;
   }
 
-  .site-footer-inner {
-    grid-template-columns: 1fr 1fr;
+  .footer-groups {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
   }
 
-  .footer-side {
-    grid-column: 1 / -1;
-    align-items: flex-start;
-    text-align: left;
-  }
+  .footer-row { gap: 0 18px; }
+  .footer-row > span { display: none; }
 
   .footer-col a,
   .footer-legal a {
