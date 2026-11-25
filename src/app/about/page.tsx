@@ -2,17 +2,19 @@ import type { Metadata } from "next";
 import { OG_IMAGE } from "@/lib/og";
 import About from "@/components/about";
 
+const TITLE = "Pieter Borremans | The Voice of Echo Room, a B2 English Podcast";
+const DESCRIPTION =
+  "Pieter Borremans is the voice of Echo Room, a B2 English podcast by Study Brew. Born in Indonesia and raised in Belgium, he learned English as a second language.";
+
 export const metadata: Metadata = {
-  title: "Pieter Borremans | Host of Echo Room, solo monologue podcast",
-  description:
-    "Pieter Borremans is a writer and software founder behind Ryoka Group, born in Indonesia and raised in Belgium. He hosts Echo Room, a solo monologue podcast.",
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: {
     canonical: "https://www.echoroom.xyz/about",
   },
   openGraph: {
-    title: "Pieter Borremans | Host of Echo Room, solo monologue podcast",
-    description:
-      "Pieter Borremans is a writer and software founder behind Ryoka Group, born in Indonesia and raised in Belgium. He hosts Echo Room, a solo monologue podcast.",
+    title: TITLE,
+    description: DESCRIPTION,
     url: "https://www.echoroom.xyz/about",
     siteName: "Echo Room",
     type: "profile",
@@ -20,9 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pieter Borremans | Host of Echo Room, solo monologue podcast",
-    description:
-      "Pieter Borremans is a writer and software founder behind Ryoka Group, born in Indonesia and raised in Belgium. He hosts Echo Room, a solo monologue podcast.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: [OG_IMAGE],
   },
 };
@@ -42,7 +43,7 @@ const personSchema = {
   familyName: "Borremans",
   jobTitle: "Founder",
   description:
-    "Pieter Borremans is the founder of Ryoka Group and host of Echo Room, a monologue podcast. A writer, digital entrepreneur, and software founder who builds, operates, and invests in software products.",
+    "Pieter Borremans is the founder of Ryoka Group and OnPoint VC and the voice of Echo Room, a B2 English podcast by Study Brew. Born in Indonesia and raised in Belgium, he has lived in Shenzhen, London and the US.",
   image: "https://www.echoroom.xyz/Pieter_Borremans.jpeg",
   url: "https://www.echoroom.xyz/about",
   worksFor: {
@@ -50,10 +51,6 @@ const personSchema = {
     "@id": "https://ryokagroup.com/#organization",
     name: "Ryoka Group",
   },
-  homeLocation: [
-    { "@type": "Place", name: "Taichung, Taiwan" },
-    { "@type": "Place", name: "London, United Kingdom" },
-  ],
   sameAs: [
     "https://ryokagroup.com/founder",
     "https://pieterborremans.com",
@@ -74,7 +71,7 @@ const podcastSchema = {
   name: "Echo Room",
   url: "https://www.echoroom.xyz",
   description:
-    "One voice. No script. No exit. Raw thoughts, uncut conversations, and the kind of honesty that doesn't fit anywhere else.",
+    "Echo Room is a B2 English podcast about ordinary life, spoken clearly at a natural pace by a non-native speaker. One topic per episode, five to ten minutes. Part of Study Brew.",
   author: {
     "@type": "Person",
     "@id": "https://ryokagroup.com/founder#pieter",

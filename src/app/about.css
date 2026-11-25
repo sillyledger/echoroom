@@ -1,231 +1,256 @@
+/* =========================================================
+   ABOUT PAGE (src/components/about.tsx)
+   ========================================================= */
 .about {
   position: relative;
   width: 100%;
   background: var(--bg);
 }
 
-/* LAYOUT */
-.about-inner {
+/* ---------- Hero ---------- */
+.about-hero {
   display: grid;
-  grid-template-columns: 420px minmax(0, 700px);
-  gap: 88px;
-  align-items: start;
-  justify-content: space-between;
-  padding-top: 96px;
-  padding-bottom: 120px;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  padding-top: 72px;
+  padding-bottom: 72px;
 }
 
-/* PHOTO */
-.about-figure {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  position: sticky;
-  top: 32px;
-}
-
-.about-photo {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 7 / 9;
-  border-radius: 6px;
-  overflow: hidden;
-  background: var(--bg);
-}
-
-.about-photo-img {
-  object-fit: cover;
-  object-position: center 35%;
-  mix-blend-mode: lighten;
-  /* the portrait has empty space top-left; crop in on the subject */
-  transform: scale(1.3);
-  transform-origin: 68% 72%;
-}
-
-.about-caption {
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted-2);
-  font-weight: 600;
-}
-
-/* TEXT */
-.about-badge {
-  margin-bottom: 16px;
-}
-
-.about-text h1 {
-  display: block;
-  font-size: clamp(44px, 5.3vw, 76px);
-  color: var(--text);
+.about-hero-text .label {
   margin-bottom: 20px;
 }
 
-.about-role {
-  font-size: 22px;
+.about-h1 {
+  font-size: clamp(3rem, 6vw, 5.25rem);
+  margin-bottom: 24px;
+}
+
+.about-lead {
+  font-size: 20px;
   line-height: 1.55;
   color: var(--muted);
+  max-width: 40ch;
+  margin-bottom: 36px;
 }
 
-.about-divider {
-  height: 1px;
-  width: 100%;
-  background: var(--border-strong);
-  margin: 44px 0;
-}
-
-.about-section-label {
-  font-size: 13px;
-  color: var(--muted-2);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-.about-bio {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  margin-bottom: 48px;
-}
-
-.about-bio p {
-  font-size: 19px;
-  line-height: 1.75;
-  color: var(--text);
-}
-
-.about-bio .about-bio-close {
-  font-size: 21px;
-  line-height: 1.65;
-  font-weight: 500;
-  color: var(--text);
-}
-
-/* STATS */
-.about-stats {
+.about-facts {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin-bottom: 44px;
+  gap: 12px;
+  max-width: 560px;
 }
 
-.about-stat {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 20px 22px;
+.about-fact {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  padding: 16px 18px;
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
 }
 
-.about-stat-label {
+.about-hero-text .about-fact .label {
   font-size: 12px;
-  color: var(--muted-2);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 600;
+  margin-bottom: 0;
 }
 
-.about-stat-value {
-  font-size: 19px;
-  font-weight: 500;
+.about-fact dd {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--text);
 }
 
-.about-stat-accent {
-  background: var(--accent-tint);
-  border-color: var(--accent-line);
-}
-
-.about-stat-accent .about-stat-label {
-  color: var(--accent);
-}
-
-.about-stat-accent .about-stat-value {
-  color: var(--accent);
-}
-
-/* SOCIAL (buttons reuse .pill from hero.css) */
-.about-social-label {
-  display: block;
-  font-size: 13px;
-  color: var(--muted-2);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  font-weight: 600;
-}
-
-.about-social-row {
+.about-hero-side {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* =================== TABLET =================== */
-@media (max-width: 1100px) {
-  .about-inner {
-    grid-template-columns: 320px minmax(0, 1fr);
-    gap: 56px;
-  }
+.polaroid-about {
+  width: 100%;
+  max-width: 340px;
 }
 
-/* =================== MOBILE =================== */
-@media (max-width: 768px) {
-  .about-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    padding-top: 24px;
-    padding-bottom: 72px;
-  }
+/* ---------- Content blocks ---------- */
+.about-block {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
 
-  .about-figure {
-    position: static;
-  }
+.about-block-last {
+  padding-bottom: 140px;
+}
 
-  .about-photo {
-    aspect-ratio: 4 / 5;
-  }
+.about-block-head .label {
+  margin-bottom: 16px;
+}
 
-  .about-role {
-    font-size: 19px;
-  }
+.about-h2 {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+}
 
-  .about-divider {
-    margin: 32px 0;
-  }
+.about-block-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
 
-  .about-bio p {
-    font-size: 18px;
-  }
-
-  .about-bio .about-bio-close {
-    font-size: 19px;
-  }
-
-  .about-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .about-stat-accent {
-    grid-column: 1 / -1;
-  }
+.about-block-body > p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 58ch;
 }
 
 .about-inline-link {
   color: var(--text);
   text-decoration: underline;
   text-decoration-color: var(--border-strong);
-  text-underline-offset: 4px;
   text-decoration-thickness: 1px;
-  transition: color 0.2s, text-decoration-color 0.2s;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s;
 }
 
 .about-inline-link:hover {
-  color: var(--text);
   text-decoration-color: var(--accent);
+}
+
+.about-accent-link {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+.about-accent-link:hover {
+  color: var(--accent-hover);
+}
+
+/* What Echo Room is: 2x2 cards */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 24px;
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+}
+
+.about-card .label {
+  font-size: 12px;
+}
+
+.about-card-value {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.about-card-line {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* Part of Study Brew: level pills */
+.about-levels {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about-level {
+  padding: 8px 14px;
+  font-size: 14px;
+  color: var(--muted);
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+}
+
+.about-level-current {
+  color: var(--accent);
+  background: var(--panel);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+/* Outside the show: link pills */
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about-link-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  transition: border-color 0.2s;
+}
+
+.about-link-pill:hover {
+  border-color: var(--muted-2);
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1100px) {
+  .about-block { gap: 40px; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 900px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 56px;
+    padding-top: 32px;
+    padding-bottom: 48px;
+  }
+
+  .polaroid-about { max-width: 300px; }
+
+  .about-block {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .about-block-last { padding-bottom: 96px; }
+}
+
+@media (max-width: 600px) {
+  .about-lead { font-size: 18px; }
+
+  .about-facts { gap: 8px; }
+  .about-fact { padding: 12px 10px; }
+  .about-hero-text .about-fact .label { font-size: 11px; letter-spacing: 0.1em; }
+  .about-fact dd { font-size: 15px; white-space: nowrap; }
+
+  .about-cards { grid-template-columns: 1fr; }
 }
