@@ -77,7 +77,7 @@ export default function Home() {
               <span className="level-pill">B2</span>
               <span className="label">A Study Brew show</span>
             </div>
-            <h1 className="landing-h1">English at the speed people really talk.</h1>
+            <h1 className="landing-h1">B2 English at the speed people really talk.</h1>
             <p className="landing-lede">
               A B2 English podcast about ordinary life. One topic in every episode, five to ten
               minutes, spoken in clear English at a natural pace. For people building a life in a

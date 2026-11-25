@@ -5,5 +5,5 @@ export const OG_IMAGE = {
   url: "/opengraph-image.jpg",
   width: 1200,
   height: 630,
-  alt: "Echo Room, a B2 English podcast by Study Brew: English at the speed people really talk.",
+  alt: "Echo Room, a B2 English podcast by Study Brew: B2 English at the speed people really talk.",
 };
