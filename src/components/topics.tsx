@@ -15,9 +15,9 @@ export default async function Topics() {
         <h1>Topics</h1>
 
         <p className="topics-lede">
-          There&apos;s no fixed lineup yet. Every episode pulls from
-          whatever&apos;s on my mind that week. Categories will show up
-          here once the first few episodes are out.
+          Every Echo Room topic comes from ordinary life: work, habits,
+          cities, friendship, decisions, focus and moving. One topic per
+          episode, in clear B2 English.
         </p>
 
         <div className="cta-row">
