@@ -14,17 +14,13 @@
 .topics-inner h1 {
   display: block;
   font-size: clamp(56px, 7vw, 96px);
-  font-weight: 700;
-  line-height: 0.95;
-  text-transform: uppercase;
-  color: var(--text-strong);
-  letter-spacing: -0.02em;
+  color: var(--text);
   margin-bottom: 12px;
 }
 
 .topics-lede {
   font-size: 21px;
-  color: var(--text-body);
+  color: var(--muted);
   line-height: 1.6;
   max-width: 600px;
   margin-bottom: 40px;

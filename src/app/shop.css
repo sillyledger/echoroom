@@ -18,14 +18,14 @@
 
 .shop-lede {
   font-size: 21px;
-  color: var(--text-body);
+  color: var(--muted);
   line-height: 1.6;
   max-width: 600px;
   margin-bottom: 48px;
 }
 
 .shop-categories {
-  border-top: 1px solid var(--line-strong);
+  border-top: 1px solid var(--border-strong);
   margin-bottom: 40px;
 }
 
@@ -34,7 +34,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 24px 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--border);
 }
 
 .shop-cat-left {
@@ -52,14 +52,14 @@
 
 .shop-cat-desc {
   font-size: 17px;
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 .shop-cat-right {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--text-dim);
+  color: var(--muted-2);
   flex-shrink: 0;
 }
 
@@ -68,10 +68,10 @@
 }
 
 .shop-cat-status {
-  font-family: var(--font-label);
   font-size: 14px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {

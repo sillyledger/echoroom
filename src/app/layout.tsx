@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import "./hero.css";
@@ -11,19 +11,12 @@ import "./topics.css";
 import "./legal.css";
 import "./contact.css";
 import "./episode.css";
+import "./landing.css";
 
-const ibmPlexSans = IBM_Plex_Sans({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
@@ -43,7 +36,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport = {
-  themeColor: "#161514",
+  themeColor: "#161618",
 };
 
 export default function RootLayout({
@@ -52,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${ibmPlexSans.variable} ${ibmPlexMono.variable}`}>
+    <html lang="en" className={dmSans.variable}>
       <body>
         {children}
         <Footer />

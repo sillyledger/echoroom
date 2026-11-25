@@ -7,151 +7,6 @@
   overflow: hidden;
 }
 
-/* =================== NAV (shared by every page) =================== */
-.nav {
-  position: relative;
-  z-index: 20;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 32px var(--gutter);
-}
-
-.logo {
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text);
-  text-decoration: none;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.nav-link {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-muted);
-  text-decoration: none;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 4px 0;
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
-}
-
-.nav-link:hover {
-  color: #fff;
-}
-
-.nav-link.nav-active {
-  color: var(--text-strong);
-  border-bottom-color: var(--accent);
-}
-
-.nav-listen {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  height: 44px;
-  padding: 0 22px;
-  border: 1px solid var(--line-pill);
-  border-radius: 999px;
-  background: rgba(237, 233, 227, 0.04);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text);
-  text-decoration: none;
-  transition: border-color 0.2s, background 0.2s;
-}
-
-.nav-listen:hover {
-  border-color: #5a534b;
-  background: rgba(237, 233, 227, 0.08);
-  color: #fff;
-}
-
-.nav-listen { font-family: inherit; cursor: pointer; }
-
-.listen-wrap { position: relative; }
-
-.listen-menu {
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
-  z-index: 30;
-  min-width: 240px;
-  display: flex;
-  flex-direction: column;
-  padding: 8px;
-  background: var(--surface);
-  border: 1px solid var(--line-strong);
-  border-radius: 8px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-}
-
-.listen-menu-label {
-  padding: 10px 14px 6px;
-  font-family: var(--font-label);
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-}
-
-.listen-menu a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  min-height: 46px;
-  padding: 0 14px;
-  border-radius: 4px;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--text);
-  text-decoration: none;
-  transition: background 0.15s, color 0.15s;
-}
-
-.listen-menu a svg { color: var(--text-dim); flex-shrink: 0; }
-
-.listen-menu a:hover,
-.listen-menu a:focus-visible {
-  background: rgba(237, 233, 227, 0.06);
-  color: #fff;
-}
-
-.listen-menu a:hover svg { color: var(--accent-soft); }
-
-.waveform {
-  fill: var(--accent);
-  flex-shrink: 0;
-}
-
-.nav-menu-btn {
-  display: none;
-  width: 44px;
-  height: 44px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--line-pill);
-  border-radius: 999px;
-  background: rgba(var(--bg-rgb), 0.6);
-  color: var(--text);
-  cursor: pointer;
-}
-
-.mobile-menu {
-  display: none;
-}
-
 /* =================== HERO LAYOUT =================== */
 .hero-inner {
   position: absolute;
@@ -207,52 +62,15 @@
   max-width: 58%;
 }
 
-h1 {
-  display: flex;
-  flex-direction: column;
+.hero h1 {
   font-size: clamp(96px, min(12.5vw, 20vh), 176px);
-  font-weight: 700;
-  line-height: 0.86;
-  letter-spacing: -0.045em;
-  text-transform: uppercase;
   margin-bottom: 32px;
 }
 
-.title-white { color: var(--text-strong); }
-.title-red   { color: var(--accent); }
-
-/* LAUNCH BADGE (also used on /episodes, /shop, /topics) */
-.launch-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  width: fit-content;
-  font-family: var(--font-label);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--accent-pale);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: var(--accent-tint);
-  border: 1px solid var(--accent-line);
-  border-radius: 999px;
-  padding: 8px 16px 8px 12px;
-  margin-bottom: 28px;
-}
-
-.launch-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  flex-shrink: 0;
-}
-
 .tagline {
-  font-family: var(--font-label);
   font-size: 15px;
   font-weight: 500;
-  color: var(--accent-soft);
+  color: var(--accent);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   margin-bottom: 18px;
@@ -260,7 +78,7 @@ h1 {
 
 .description {
   font-size: 21px;
-  color: var(--text-body);
+  color: var(--muted);
   line-height: 1.6;
   max-width: 540px;
   margin-bottom: 40px;
@@ -274,45 +92,6 @@ h1 {
   margin-bottom: 36px;
 }
 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  height: 54px;
-  background: var(--accent);
-  color: #fff;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 0 30px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-
-.btn-primary:hover { background: var(--accent-hover); }
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 54px;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text);
-  padding: 0 28px;
-  border: 1px solid var(--line-btn);
-  border-radius: 4px;
-  text-decoration: none;
-  transition: border-color 0.2s, color 0.2s;
-}
-
-.btn-secondary:hover { border-color: #6a6259; color: #fff; }
-
 /* PLATFORMS */
 .platforms {
   display: flex;
@@ -323,29 +102,13 @@ h1 {
 }
 
 .platforms-label {
-  font-family: var(--font-label);
   font-size: 13px;
-  color: var(--text-dim);
-  letter-spacing: 0.1em;
+  color: var(--muted-2);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-right: 6px;
+  font-weight: 600;
 }
-
-.pill {
-  display: inline-flex;
-  align-items: center;
-  height: 44px;
-  font-size: 15px;
-  color: var(--text-body);
-  background: var(--surface-pill);
-  border: 1px solid var(--line-strong);
-  border-radius: 4px;
-  padding: 0 18px;
-  text-decoration: none;
-  transition: border-color 0.2s, color 0.2s;
-}
-
-.pill:hover { border-color: #5a534b; color: #fff; }
 
 /* PULL QUOTE */
 .pull-quote {
@@ -363,19 +126,16 @@ h1 {
   color: var(--accent);
   line-height: 0.5;
   margin-bottom: 14px;
-  font-family: Georgia, serif;
 }
 
 .pull-quote p {
   font-size: 19px;
-  color: #d6d0c7;
+  color: var(--text);
   line-height: 1.6;
-  font-style: italic;
 }
 
 .quote-red {
-  color: var(--accent-soft);
-  font-style: normal;
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -386,8 +146,8 @@ h1 {
   max-width: 640px;
   padding: 22px 24px;
   margin-bottom: 18px;
-  background: rgba(30, 28, 26, 0.92);
-  border: 1px solid var(--line-strong);
+  background: rgba(var(--panel-rgb), 0.92);
+  border: 1px solid var(--border-strong);
   border-radius: 6px;
 }
 
@@ -400,18 +160,18 @@ h1 {
 }
 
 .latest-label {
-  font-family: var(--font-label);
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .latest-title {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.25;
-  color: var(--text-strong);
+  color: var(--text);
 }
 
 .latest-card .btn-primary {
@@ -429,36 +189,33 @@ h1 {
 
 .also-on {
   font-size: 15px;
-  color: var(--text-dim);
+  color: var(--muted-2);
 }
 
 .also-on a {
   color: var(--text);
   text-decoration: none;
-  border-bottom: 1px solid #5a534b;
+  border-bottom: 1px solid var(--border-strong);
   transition: color 0.2s, border-color 0.2s;
 }
 
 .also-on a:hover {
-  color: #fff;
-  border-color: var(--accent-soft);
+  color: var(--text);
+  border-color: var(--accent);
 }
 
 .also-sep {
-  color: #5a534b;
+  color: var(--border-strong);
 }
 
 /* =================== TABLET =================== */
 @media (max-width: 1100px) {
   .pull-quote { display: none; }
-  .nav-links { gap: 28px; }
   .hero-text { max-width: 64%; }
 }
 
 /* =================== MOBILE =================== */
 @media (max-width: 768px) {
-  .listen-menu { min-width: 220px; }
-
   .latest-card {
     flex-direction: column;
     align-items: stretch;
@@ -481,70 +238,9 @@ h1 {
     flex-direction: column;
   }
 
-  /* NAV: logo + listen + menu button over the photo */
-  .nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 18px var(--gutter);
-    flex-wrap: wrap;
-  }
-
-  /* Pages without a hero photo keep the nav in flow */
-  .about .nav,
-  .episodes .nav,
-  .shop .nav,
-  .topics .nav,
-  .contact .nav,
-  .legal .nav,
-  .episode-page .nav {
-    position: relative;
-  }
-
-  .logo { font-size: 14px; display: inline-flex; align-items: center; min-height: 44px; }
-
   /* Grow the "Also on" links' tap area to 44px without moving the underline */
   .also-on a { position: relative; }
   .also-on a::after { content: ""; position: absolute; left: 0; right: 0; top: -12px; bottom: -12px; }
-
-  .nav-links { gap: 8px; }
-  .nav-link { display: none; }
-
-  .nav-listen {
-    padding: 0 18px;
-    font-size: 13px;
-    background: rgba(var(--bg-rgb), 0.6);
-  }
-
-  .nav-menu-btn { display: inline-flex; }
-
-  .mobile-menu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 14px;
-    padding: 8px 0;
-    background: var(--surface);
-    border: 1px solid var(--line-strong);
-    border-radius: 6px;
-  }
-
-  .mobile-menu a {
-    display: flex;
-    align-items: center;
-    min-height: 52px;
-    padding: 0 20px;
-    font-size: 17px;
-    font-weight: 500;
-    color: var(--text-body);
-    text-decoration: none;
-  }
-
-  .mobile-menu a.nav-active {
-    color: var(--text-strong);
-    box-shadow: inset 3px 0 0 var(--accent);
-  }
 
   /* Stack: photo on top, text below */
   .hero-inner {
@@ -584,16 +280,9 @@ h1 {
     margin-top: -48px;
   }
 
-  h1 {
+  .hero h1 {
     font-size: 19.5vw;
-    line-height: 0.88;
     margin-bottom: 20px;
-  }
-
-  .launch-badge {
-    font-size: 12px;
-    padding: 6px 13px 6px 10px;
-    margin-bottom: 18px;
   }
 
   .tagline {
@@ -627,13 +316,9 @@ h1 {
     margin: 0 0 4px;
   }
 
-  .pill {
-    justify-content: center;
-    height: 46px;
-  }
 }
 
 @media (max-width: 380px) {
-  h1 { font-size: 20vw; }
+  .hero h1 { font-size: 20vw; }
   .hero-photo { min-height: 320px; }
 }

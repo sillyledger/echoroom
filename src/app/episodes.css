@@ -13,17 +13,13 @@
 .episodes-inner h1 {
   display: block;
   font-size: clamp(56px, 7vw, 96px);
-  font-weight: 700;
-  line-height: 0.95;
-  color: var(--text-strong);
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
+  color: var(--text);
   margin-bottom: 20px;
 }
 
 .episodes-lede {
   font-size: 21px;
-  color: var(--text-body);
+  color: var(--muted);
   line-height: 1.6;
   max-width: 680px;
   margin-bottom: 64px;
@@ -33,16 +29,16 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 16px;
-  font-family: var(--font-label);
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text-dim);
+  color: var(--muted-2);
+  font-weight: 600;
 }
 
 .episodes-list {
   list-style: none;
-  border-top: 1px solid var(--line-strong);
+  border-top: 1px solid var(--border-strong);
 }
 
 .episode-row {
@@ -52,45 +48,44 @@
   column-gap: 32px;
   min-height: 96px;
   padding: 16px 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--border);
 }
 
 .episode-row-first {
-  background: var(--surface);
+  background: var(--panel);
   border-radius: 4px;
-  border-bottom-color: var(--line-strong);
+  border-bottom-color: var(--border-strong);
   margin: 0 -28px;
   padding: 16px 28px;
   min-height: 104px;
 }
 
 .episode-number {
-  font-family: var(--font-label);
   font-size: 17px;
-  color: var(--text-dim);
+  color: var(--muted-2);
 }
 
 .episode-row-first .episode-number {
-  color: var(--accent-soft);
+  color: var(--accent);
 }
 
 .episode-title {
   font-size: 22px;
   font-weight: 500;
   line-height: 1.35;
-  color: #ddd7ce;
+  color: var(--text);
 }
 
 .episode-row-first .episode-title {
   font-size: 24px;
   font-weight: 600;
-  color: var(--text-strong);
+  color: var(--text);
 }
 
 .episode-status {
   display: inline-flex;
   justify-content: flex-end;
-  color: var(--text-dim);
+  color: var(--muted-2);
 }
 
 .episode-lock {
@@ -98,23 +93,22 @@
 }
 
 .episode-date {
-  font-family: var(--font-label);
   font-size: 15px;
   letter-spacing: 0.08em;
-  color: var(--text-dim);
+  color: var(--muted-2);
   text-align: right;
 }
 
 .episode-row-first .episode-date {
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 /* up-first pill is defined in home.css */
 
 .episode-row { grid-template-columns: 40px minmax(0, 1fr) auto 90px; }
 
-.episode-row .episode-number { color: var(--accent-soft); }
-.episode-row .episode-title { color: var(--text-strong); font-weight: 600; }
+.episode-row .episode-number { color: var(--accent); }
+.episode-row .episode-title { color: var(--text); font-weight: 600; }
 
 .episode-listen {
   display: inline-flex;
@@ -128,21 +122,21 @@
   text-decoration: none;
 }
 
-.episode-listen:hover { color: #fff; }
+.episode-listen:hover { color: var(--text); }
 
 .episodes-meta-soon { margin-top: 56px; }
 
-.episodes-list-soon { border-top: 1px dashed #2e2a26; }
+.episodes-list-soon { border-top: 1px dashed var(--border); }
 .episodes-list-soon { margin-top: 56px; }
 
 .episode-row-soon {
   grid-template-columns: 40px minmax(0, 1fr) auto;
-  border-bottom: 1px dashed #2e2a26;
+  border-bottom: 1px dashed var(--border);
 }
 
-.episode-row-soon .episode-number { color: #6e685f; }
-.episode-row-soon .episode-title { color: #a9a197; font-weight: 500; }
-.episode-row-soon .episode-date { color: #6e685f; text-transform: uppercase; letter-spacing: 0.1em; font-size: 13px; }
+.episode-row-soon .episode-number { color: var(--muted-2); }
+.episode-row-soon .episode-title { color: var(--muted); font-weight: 500; }
+.episode-row-soon .episode-date { color: var(--muted-2); text-transform: uppercase; letter-spacing: 0.12em; font-size: 13px; font-weight: 600; }
 
 @media (max-width: 768px) {
   .episodes-inner {

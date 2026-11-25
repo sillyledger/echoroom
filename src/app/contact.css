@@ -11,25 +11,21 @@
 .contact-inner h1 {
   display: block;
   font-size: clamp(56px, 7vw, 96px);
-  font-weight: 700;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  color: var(--text-strong);
+  color: var(--text);
   margin-bottom: 24px;
 }
 
 .contact-lede {
   font-size: 21px;
   line-height: 1.6;
-  color: var(--text-body);
+  color: var(--muted);
   max-width: 700px;
   margin-bottom: 36px;
 }
 
 .contact-list {
   list-style: none;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--border);
   margin-bottom: 48px;
 }
 
@@ -38,20 +34,19 @@
   grid-template-columns: 56px 1fr;
   align-items: baseline;
   padding: 20px 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--border);
 }
 
 .contact-num {
-  font-family: var(--font-label);
   font-size: 15px;
-  color: var(--accent-soft);
+  color: var(--accent);
 }
 
 .contact-item {
   font-size: 22px;
   font-weight: 400;
   line-height: 1.4;
-  color: var(--text-strong);
+  color: var(--text);
 }
 
 .contact-card {
@@ -59,8 +54,8 @@
   align-items: center;
   gap: 28px;
   padding: 28px 32px;
-  background: var(--surface-2);
-  border: 1px solid var(--line);
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
   border-radius: 8px;
   margin-bottom: 32px;
 }
@@ -72,7 +67,7 @@
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  background: var(--surface-2);
+  background: var(--panel-soft);
 }
 
 .contact-avatar-img {
@@ -91,19 +86,18 @@
   min-width: 0;
 }
 
-.contact-name { font-size: 20px; font-weight: 600; color: var(--text-strong); }
+.contact-name { font-size: 20px; font-weight: 600; color: var(--text); }
 
 .contact-email {
-  font-family: var(--font-label);
   font-size: 18px;
-  color: var(--text-body);
+  color: var(--muted);
   text-decoration: none;
   transition: color 0.2s;
   padding: 10px 0;
   margin: -10px 0;
 }
 
-.contact-email:hover { color: #fff; }
+.contact-email:hover { color: var(--text); }
 
 .contact-actions { display: flex; gap: 12px; flex-shrink: 0; }
 
@@ -114,7 +108,7 @@
   height: 50px;
   padding: 0 18px;
   background: transparent;
-  border: 1px solid var(--line-btn);
+  border: 1px solid var(--border-strong);
   border-radius: 4px;
   font-family: inherit;
   font-size: 15px;
@@ -124,14 +118,13 @@
   transition: border-color 0.2s, color 0.2s;
 }
 
-.contact-copy:hover { border-color: #6a6259; color: #fff; }
+.contact-copy:hover { border-color: var(--muted-2); color: var(--text); }
 
-.contact-btn { height: 50px; }
 
 .contact-note {
   font-size: 17px;
   line-height: 1.7;
-  color: var(--text-dim);
+  color: var(--muted-2);
 }
 
 @media (max-width: 768px) {

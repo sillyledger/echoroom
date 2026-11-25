@@ -5,5 +5,5 @@ export const OG_IMAGE = {
   url: "/opengraph-image.jpg",
   width: 1200,
   height: 630,
-  alt: "Echo Room, a monologue podcast by Pieter Borremans. One voice. No script. No exit.",
+  alt: "A B2 English podcast about ordinary life, spoken clearly at a natural pace by a non-native speaker. Part of Study Brew.",
 };

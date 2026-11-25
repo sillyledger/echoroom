@@ -14,33 +14,30 @@
   min-height: 44px;
   margin-bottom: 32px;
   font-size: 15px;
-  color: var(--text-muted);
+  color: var(--muted);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.episode-back:hover { color: #fff; }
+.episode-back:hover { color: var(--text); }
 
 .episode-meta {
-  font-family: var(--font-label);
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text-dim);
+  color: var(--muted-2);
   margin-bottom: 18px;
+  font-weight: 600;
 }
 
 .episode-meta-item { white-space: nowrap; }
-.episode-season { color: var(--accent-soft); }
+.episode-season { color: var(--accent); }
 
 .episode-inner h1 {
   display: block;
   font-size: clamp(40px, 6vw, 72px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.035em;
   text-transform: none;
-  color: var(--text-strong);
+  color: var(--text);
   margin-bottom: 36px;
 }
 
@@ -51,8 +48,8 @@
   gap: 22px;
   width: 100%;
   padding: 20px;
-  background: var(--surface);
-  border: 1px solid #2e2a26;
+  background: var(--panel);
+  border: 1px solid var(--border);
   border-radius: 8px;
   font-family: inherit;
   text-align: left;
@@ -61,7 +58,7 @@
   transition: border-color 0.2s;
 }
 
-.player-card:hover { border-color: #45403a; }
+.player-card:hover { border-color: var(--muted-2); }
 
 .player-photo {
   position: relative;
@@ -70,7 +67,7 @@
   flex-shrink: 0;
   border-radius: 6px;
   overflow: hidden;
-  background: var(--surface);
+  background: var(--panel);
 }
 
 .player-photo-img {
@@ -90,23 +87,23 @@
 }
 
 .player-label {
-  font-family: var(--font-label);
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .player-title {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.3;
-  color: var(--text-strong);
+  color: var(--text);
 }
 
 .player-note {
   font-size: 14px;
-  color: var(--text-dim);
+  color: var(--muted-2);
 }
 
 .player-play {
@@ -118,7 +115,7 @@
   flex-shrink: 0;
   border-radius: 50%;
   background: var(--accent);
-  color: #fff;
+  color: var(--accent-ink);
   transition: background 0.2s;
 }
 
@@ -137,7 +134,7 @@
 
 .episode-also-label {
   font-size: 14px;
-  color: var(--text-dim);
+  color: var(--muted-2);
   margin-right: 4px;
 }
 
@@ -147,7 +144,7 @@
   gap: 6px;
   height: 38px;
   padding: 0 14px;
-  border: 1px solid var(--line-pill);
+  border: 1px solid var(--border-strong);
   border-radius: 999px;
   font-size: 14px;
   color: var(--text);
@@ -155,18 +152,18 @@
   transition: border-color 0.2s, color 0.2s;
 }
 
-.episode-also a svg { color: var(--text-dim); }
+.episode-also a svg { color: var(--muted-2); }
 
-.episode-also a:hover { border-color: #5a534b; color: #fff; }
+.episode-also a:hover { border-color: var(--muted-2); color: var(--text); }
 
 /* Notes */
 .episode-notes-label {
-  font-family: var(--font-label);
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent-soft);
+  color: var(--accent);
   margin-bottom: 18px;
+  font-weight: 600;
 }
 
 .episode-notes ul { list-style: none; padding: 0; }
@@ -175,7 +172,7 @@
 .episode-notes p {
   font-size: 20px;
   line-height: 1.6;
-  color: var(--text-read);
+  color: var(--text);
 }
 
 .episode-notes li {
@@ -188,27 +185,26 @@
   content: "–";
   position: absolute;
   left: 0;
-  color: var(--accent-soft);
+  color: var(--accent);
 }
 
 .episode-notes p { margin-bottom: 16px; }
 
 .episode-notes a {
-  color: var(--text-strong);
+  color: var(--text);
   text-decoration: underline;
-  text-decoration-color: #5a534b;
+  text-decoration-color: var(--border-strong);
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
   transition: color 0.2s, text-decoration-color 0.2s;
 }
 
-.episode-notes a:hover { color: #fff; text-decoration-color: var(--accent-soft); }
+.episode-notes a:hover { color: var(--text); text-decoration-color: var(--accent); }
 
 .episode-notes h2,
 .episode-notes h3 {
   font-size: 24px;
-  font-weight: 600;
-  color: var(--text-strong);
+  color: var(--text);
   margin: 32px 0 12px;
 }
 
@@ -219,7 +215,7 @@
   gap: 16px;
   margin-top: 56px;
   padding-top: 32px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--border);
 }
 
 .episode-closing-card {
@@ -228,34 +224,34 @@
   align-items: flex-start;
   gap: 8px;
   padding: 22px;
-  background: var(--surface-2);
-  border: 1px solid var(--line);
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
   border-radius: 6px;
   color: inherit;
   text-decoration: none;
 }
 
 a.episode-closing-card { transition: border-color 0.2s; }
-a.episode-closing-card:hover { border-color: #45403a; }
+a.episode-closing-card:hover { border-color: var(--muted-2); }
 
 .episode-closing-label {
-  font-family: var(--font-label);
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .episode-closing-title {
   font-size: 19px;
   font-weight: 600;
   line-height: 1.35;
-  color: var(--text-strong);
+  color: var(--text);
 }
 
-.episode-closing-text { font-size: 16px; color: var(--text-body); }
+.episode-closing-text { font-size: 16px; color: var(--muted); }
 
-.episode-closing-strong { font-size: 18px; font-weight: 600; color: var(--text-strong); }
+.episode-closing-strong { font-size: 18px; font-weight: 600; color: var(--text); }
 
 .episode-closing-link {
   display: inline-flex;
@@ -269,7 +265,7 @@ a.episode-closing-card:hover { border-color: #45403a; }
   transition: color 0.2s;
 }
 
-.episode-closing-link:hover { color: #fff; }
+.episode-closing-link:hover { color: var(--text); }
 
 /* Title links from the episode lists (home section and /episodes) */
 .episode-title-link,
@@ -281,7 +277,7 @@ a.episode-closing-card:hover { border-color: #45403a; }
 .episode-title-link:hover,
 .season-card-title-link:hover {
   text-decoration: underline;
-  text-decoration-color: #5a534b;
+  text-decoration-color: var(--border-strong);
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
 }

@@ -12,10 +12,7 @@
 .home-h2 {
   margin-top: 14px;
   font-size: clamp(36px, 4vw, 56px);
-  font-weight: 700;
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  color: var(--text-strong);
+  color: var(--text);
 }
 
 /* ---------- Season preview ---------- */
@@ -40,8 +37,8 @@
   gap: 48px;
   min-height: 300px;
   padding: 32px;
-  background: var(--surface);
-  border: 1px solid #2e2a26;
+  background: var(--panel);
+  border: 1px solid var(--border);
   border-radius: 6px;
 }
 
@@ -52,30 +49,29 @@
 }
 
 .season-card-num {
-  font-family: var(--font-label);
   font-size: 15px;
-  color: var(--text-dim);
+  color: var(--muted-2);
 }
 
 .season-card-first .season-card-num {
-  color: var(--accent-soft);
+  color: var(--accent);
 }
 
 .season-card-lock {
   display: inline-flex;
-  color: var(--text-dim);
+  color: var(--muted-2);
 }
 
 .up-first {
-  font-family: var(--font-label);
   font-size: 12px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--bg);
-  background: var(--accent-soft);
+  background: var(--accent);
   border-radius: 999px;
   padding: 5px 11px;
   white-space: nowrap;
+  font-weight: 600;
 }
 
 .season-card-title {
@@ -83,13 +79,13 @@
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  color: var(--text-strong);
+  color: var(--text);
   margin-bottom: 12px;
 }
 
 .season-card-meta {
   font-size: 17px;
-  color: #a9a197;
+  color: var(--muted);
 }
 
 /* ---------- Host strip ---------- */
@@ -98,8 +94,8 @@
   align-items: center;
   gap: 72px;
   padding: 64px;
-  background: var(--surface-2);
-  border: 1px solid var(--line);
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
   border-radius: 8px;
 }
 
@@ -110,7 +106,7 @@
   flex-shrink: 0;
   border-radius: 4px;
   overflow: hidden;
-  background: var(--surface-2);
+  background: var(--panel-soft);
 }
 
 .host-photo-img {
@@ -131,16 +127,13 @@
 
 .host-name {
   font-size: clamp(34px, 3.2vw, 44px);
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  color: var(--text-strong);
+  color: var(--text);
 }
 
 .host-bio {
   font-size: 20px;
   line-height: 1.7;
-  color: #cfc8be;
+  color: var(--text);
 }
 
 .season-card-foot {
@@ -159,27 +152,27 @@
   font-weight: 500;
   color: var(--text);
   text-decoration: none;
-  border-bottom: 1px solid #5a534b;
+  border-bottom: 1px solid var(--border-strong);
   transition: color 0.2s, border-color 0.2s;
 }
 
-.season-card-listen:hover { color: #fff; border-color: var(--accent-soft); }
+.season-card-listen:hover { color: var(--text); border-color: var(--accent); }
 
 .season-card-soon {
   background: transparent;
-  border: 1px dashed var(--line-pill);
+  border: 1px dashed var(--border-strong);
 }
 
 .season-card-soon-label {
-  font-family: var(--font-label);
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text-dim);
+  color: var(--muted-2);
+  font-weight: 600;
 }
 
-.season-card-soon .season-card-title { color: #a9a197; }
-.season-card-soon .season-card-meta { color: #6e685f; }
+.season-card-soon .season-card-title { color: var(--muted); }
+.season-card-soon .season-card-meta { color: var(--muted-2); }
 
 /* =================== TABLET =================== */
 @media (max-width: 1024px) {
