@@ -1,154 +1,220 @@
-.contact { position: relative; width: 100%; background: var(--bg); }
-
-.contact-inner {
-  padding-top: 88px;
-  padding-bottom: 120px;
+/* =========================================================
+   CONTACT PAGE (src/components/contact.tsx)
+   ========================================================= */
+.contact {
+  position: relative;
+  width: 100%;
+  background: var(--bg);
 }
 
-.contact-inner.container {
-  max-width: calc(760px + 2 * var(--gutter));
+/* ---------- Hero ---------- */
+.contact-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding-top: 72px;
+  padding-bottom: 72px;
 }
 
-.contact-label { margin-bottom: 16px; }
+.contact-hero-text .label {
+  margin-bottom: 20px;
+}
 
-.contact-inner h1 {
-  display: block;
-  font-size: clamp(56px, 7vw, 96px);
-  color: var(--text);
+.contact-h1 {
+  font-size: clamp(3rem, 6vw, 5.25rem);
   margin-bottom: 24px;
 }
 
-.contact-lede {
-  font-size: 21px;
-  line-height: 1.6;
+.contact-lead {
+  font-size: 20px;
+  line-height: 1.55;
   color: var(--muted);
-  max-width: 700px;
-  margin-bottom: 36px;
+  max-width: 40ch;
 }
 
-.contact-list {
-  list-style: none;
-  border-top: 1px solid var(--border);
-  margin-bottom: 48px;
-}
-
-.contact-list li {
-  display: grid;
-  grid-template-columns: 56px 1fr;
-  align-items: baseline;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.contact-num {
-  font-size: 15px;
-  color: var(--accent);
-}
-
-.contact-item {
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--text);
-}
-
+/* ---------- Email card ---------- */
 .contact-card {
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--accent);
+}
+
+.contact-person {
   display: flex;
   align-items: center;
-  gap: 28px;
-  padding: 28px 32px;
-  background: var(--panel-soft);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  margin-bottom: 32px;
+  gap: 22px;
+  padding-top: 14px;
+  margin-bottom: 28px;
 }
 
-.contact-avatar {
-  position: relative;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  overflow: hidden;
+.polaroid.polaroid-contact {
   flex-shrink: 0;
-  background: var(--panel-soft);
+  width: 110px;
+  padding: 6px 6px 9px;
+  border-radius: 6px;
+  transform: rotate(-3deg);
+  box-shadow: 0 14px 28px -10px var(--shadow), 0 6px 12px -6px var(--shadow);
 }
 
-.contact-avatar-img {
-  object-fit: cover;
-  object-position: 55% 40%;
-  mix-blend-mode: lighten;
-  transform: scale(1.8);
-  transform-origin: 62% 42%;
+.polaroid.polaroid-contact .polaroid-tape {
+  top: -8px;
+  height: 16px;
+  width: 40%;
 }
 
-.contact-who {
+.contact-person-text {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  flex-grow: 1;
-  min-width: 0;
 }
 
-.contact-name { font-size: 20px; font-weight: 600; color: var(--text); }
+.contact-name {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.contact-role {
+  font-size: 14px;
+  color: var(--muted);
+}
 
 .contact-email {
-  font-size: 18px;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s;
-  padding: 10px 0;
-  margin: -10px 0;
-}
-
-.contact-email:hover { color: var(--text); }
-
-.contact-actions { display: flex; gap: 12px; flex-shrink: 0; }
-
-.contact-copy {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 50px;
-  padding: 0 18px;
-  background: transparent;
-  border: 1px solid var(--border-strong);
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: 15px;
-  font-weight: 500;
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
   color: var(--text);
-  cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
+  text-decoration: none;
+  margin-bottom: 24px;
+  overflow-wrap: anywhere;
 }
 
-.contact-copy:hover { border-color: var(--muted-2); color: var(--text); }
+.contact-email:hover {
+  color: var(--accent);
+}
 
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- What to send ---------- */
+.contact-block {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+  padding-top: 70px;
+  padding-bottom: 40px;
+}
+
+.contact-block-head .label {
+  margin-bottom: 16px;
+}
+
+.contact-h2 {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+}
+
+.contact-reasons {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-reason {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 12px;
+  padding: 22px 24px;
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+}
+
+.contact-reason-num {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.5;
+}
+
+.contact-reason-title {
+  display: block;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.contact-reason-text {
+  display: block;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.contact-foot {
+  padding-top: 8px;
+  padding-bottom: 140px;
+}
 
 .contact-note {
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.6;
   color: var(--muted-2);
 }
 
-@media (max-width: 768px) {
-  .contact-inner { padding-top: 32px; padding-bottom: 72px; }
-  .contact-lede { font-size: 18px; margin-bottom: 20px; }
-  .contact-list { margin-bottom: 28px; }
-  .contact-list li { grid-template-columns: 40px 1fr; padding: 16px 0; }
-  .contact-num { font-size: 14px; }
-  .contact-item { font-size: 18px; }
-  /* Avatar and name/email side by side, buttons full width below */
-  .contact-card {
-    display: grid;
-    grid-template-columns: 56px minmax(0, 1fr);
-    align-items: center;
-    column-gap: 14px;
-    row-gap: 18px;
-    padding: 22px;
+/* ---------- Tablet ---------- */
+@media (max-width: 1100px) {
+  .contact-block { gap: 40px; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 900px) {
+  .contact-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-top: 32px;
+    padding-bottom: 48px;
   }
-  .contact-avatar { width: 56px; height: 56px; }
-  .contact-email { font-size: 16px; overflow-wrap: anywhere; }
-  .contact-actions { grid-column: 1 / -1; flex-direction: column-reverse; }
-  .contact-actions > * { width: 100%; justify-content: center; }
-  .contact-note { font-size: 16px; }
+
+  .contact-block {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-top: 48px;
+    padding-bottom: 32px;
+  }
+
+  .contact-foot { padding-bottom: 96px; }
+}
+
+@media (max-width: 600px) {
+  .contact-lead { font-size: 18px; }
+  .contact-card { padding: 24px 20px; }
+  .polaroid.polaroid-contact { width: 90px; }
+  .contact-email { font-size: 24px; }
+  .contact-actions .btn-primary,
+  .contact-actions .btn-secondary { flex: 1 1 auto; }
+  .contact-reason { padding: 18px; grid-template-columns: 30px minmax(0, 1fr); }
 }

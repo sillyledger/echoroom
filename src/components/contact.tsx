@@ -1,66 +1,83 @@
-import Image from "next/image";
 import Navbar from "./Navbar";
 import CopyEmail from "./CopyEmail";
+import Polaroid from "./Polaroid";
 
 const EMAIL = "p@ryoka.xyz";
-const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent("Echo Room")}`;
+const MAILTO = `mailto:${EMAIL}?subject=Echo%20Room`;
 
-const PROMPTS = [
-  "A topic you want me to think out loud about",
-  "A question you've been sitting on",
-  "A take from an episode you think I got wrong",
+const REASONS = [
+  {
+    title: "A topic from ordinary life",
+    text: "Work, habits, cities, friendship, decisions. Something you would like explained in clear English.",
+  },
+  {
+    title: "A part that was hard to follow",
+    text: "A word, a sentence or a moment where the pace felt too fast. It helps make the next episodes better.",
+  },
+  {
+    title: "Where you listen from",
+    text: "Your city, your level, how you use the show. It is good to know who is on the other side.",
+  },
 ];
 
 export default function Contact() {
   return (
     <section className="contact">
       <Navbar />
-      <div className="contact-inner container">
-        <p className="section-label contact-label">Contact</p>
-        <h1>Talk back.</h1>
-        <p className="contact-lede">
-          Echo Room is one voice, but it doesn&apos;t have to be one-sided. The best
-          episodes often start with someone else&apos;s question. Send me:
-        </p>
 
-        <ol className="contact-list">
-          {PROMPTS.map((p, i) => (
-            <li key={p}>
-              <span className="contact-num">{String(i + 1).padStart(2, "0")}</span>
-              <span className="contact-item">{p}</span>
-            </li>
-          ))}
-        </ol>
+      <div className="contact-hero container">
+        <div className="contact-hero-text">
+          <p className="label">Contact</p>
+          <h1 className="contact-h1">Send a topic.</h1>
+          <p className="contact-lead">
+            Echo Room is one voice, but the best topics often come from listeners. If something from
+            ordinary life is on your mind, send it. Simple English is fine.
+          </p>
+        </div>
 
         <div className="contact-card">
-          <div className="contact-avatar">
-            <Image
-              src="/Pieter_Borremans.jpeg"
-              alt="Pieter Borremans"
-              fill
-              sizes="72px"
-              className="contact-avatar-img"
-            />
+          <div className="contact-person">
+            <Polaroid className="polaroid-contact" sizes="110px" alt="Pieter Borremans" />
+            <div className="contact-person-text">
+              <span className="contact-name">Pieter Borremans</span>
+              <span className="contact-role">The voice of Echo Room</span>
+            </div>
           </div>
-          <div className="contact-who">
-            <span className="contact-name">Pieter Borremans</span>
-            <a href={MAILTO} className="contact-email">{EMAIL}</a>
-          </div>
+          <a href={MAILTO} className="contact-email">{EMAIL}</a>
           <div className="contact-actions">
-            <CopyEmail email={EMAIL} />
-            <a href={MAILTO} className="btn-primary contact-btn">
+            <a href={MAILTO} className="btn-primary">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <rect x="3" y="5" width="18" height="14" rx="2" />
                 <path d="M3 7l9 6 9-6" />
               </svg>
-              Email me
+              Email
             </a>
+            <CopyEmail email={EMAIL} label="Copy address" className="btn-secondary" />
           </div>
         </div>
+      </div>
 
+      <div className="contact-block container">
+        <div className="contact-block-head">
+          <p className="label">What to send</p>
+          <h2 className="contact-h2">Three good reasons to write.</h2>
+        </div>
+        <ol className="contact-reasons">
+          {REASONS.map((r, i) => (
+            <li key={r.title} className="contact-reason">
+              <span className="contact-reason-num">{String(i + 1).padStart(2, "0")}</span>
+              <div>
+                <span className="contact-reason-title">{r.title}</span>
+                <span className="contact-reason-text">{r.text}</span>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div className="contact-foot container">
         <p className="contact-note">
-          I read every email. If your idea makes it into an episode, I&apos;ll mention
-          you by first name, or keep it anonymous if you prefer.
+          Pieter reads every email. Topics that work well for B2 learners may become an episode.
         </p>
       </div>
     </section>

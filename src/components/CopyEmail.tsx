@@ -2,12 +2,18 @@
 
 import { useState } from "react";
 
-export default function CopyEmail({ email }: { email: string }) {
+type CopyEmailProps = {
+  email: string;
+  label?: string;
+  className?: string;
+};
+
+export default function CopyEmail({ email, label = "Copy", className = "contact-copy" }: CopyEmailProps) {
   const [copied, setCopied] = useState(false);
   return (
     <button
       type="button"
-      className="contact-copy"
+      className={className}
       onClick={async () => {
         try {
           await navigator.clipboard.writeText(email);
@@ -23,7 +29,7 @@ export default function CopyEmail({ email }: { email: string }) {
         <rect x="9" y="9" width="11" height="11" rx="2" />
         <path d="M5 15V5a2 2 0 0 1 2-2h10" />
       </svg>
-      {copied ? "Copied" : "Copy"}
+      {copied ? "Copied" : label}
     </button>
   );
 }

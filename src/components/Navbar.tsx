@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
-import { PLATFORM_LINKS } from "@/lib/links";
 
 const NAV_LINKS = [
   { label: "Episodes", href: "/episodes" },
@@ -11,9 +10,6 @@ const NAV_LINKS = [
 ];
 
 const STUDY_BREW_URL = "https://studybrew.co";
-
-const APPLE_PODCASTS_URL =
-  PLATFORM_LINKS.find((p) => p.label === "Apple Podcasts")?.href ?? PLATFORM_LINKS[0].href;
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -48,13 +44,8 @@ export default function Navbar() {
         >
           Study Brew ↗
         </a>
-        <a
-          href={APPLE_PODCASTS_URL}
-          className="btn-primary btn-sm"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Listen
+        <a href="/contact" className="btn-primary btn-sm">
+          Contact
         </a>
         <button
           type="button"
