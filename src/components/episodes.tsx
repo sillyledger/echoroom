@@ -12,7 +12,7 @@ export default async function Episodes() {
       <Navbar />
       <div className="episodes-inner container">
         <h1>Episodes</h1>
-        <p className="episodes-lede">One voice, no script. Every episode, newest first.</p>
+        <p className="episodes-lede">Ordinary life in clear B2 English. Every episode, newest first.</p>
 
         {published.length > 0 && (
           <>

@@ -20,10 +20,25 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+const DEFAULT_TITLE = "Echo Room | B2 English Podcast at a Natural Pace";
+const DEFAULT_DESCRIPTION =
+  "A B2 English podcast about ordinary life, spoken clearly at a natural pace by a non-native speaker. Part of Study Brew.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.echoroom.xyz"),
-  title: "Echo Room",
-  description: "One voice. No script. No exit.",
+  title: DEFAULT_TITLE,
+  description: DEFAULT_DESCRIPTION,
+  openGraph: {
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    siteName: "Echo Room",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+  },
   icons: {
     icon: [
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
