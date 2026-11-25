@@ -123,19 +123,20 @@
 
 .episode-listen:hover { color: var(--text); }
 
-.episodes-meta-soon { margin-top: 56px; }
-
-.episodes-list-soon { border-top: 1px dashed var(--border); }
-.episodes-list-soon { margin-top: 56px; }
-
-.episode-row-soon {
-  grid-template-columns: 40px minmax(0, 1fr) auto;
-  border-bottom: 1px dashed var(--border);
+.episodes-empty {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--muted);
 }
 
-.episode-row-soon .episode-number { color: var(--muted-2); }
-.episode-row-soon .episode-title { color: var(--muted); font-weight: 500; }
-.episode-row-soon .episode-date { color: var(--muted-2); text-transform: uppercase; letter-spacing: 0.12em; font-size: 13px; font-weight: 600; }
+.episodes-empty a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  text-underline-offset: 4px;
+}
+
+.episodes-empty a:hover { text-decoration-color: var(--accent); }
 
 @media (max-width: 768px) {
   .episodes-inner {
@@ -197,11 +198,4 @@
   }
 
   .episode-listen { grid-area: listen; justify-content: flex-start; }
-
-  .episode-row-soon {
-    grid-template-columns: 32px minmax(0, 1fr);
-    grid-template-areas:
-      "num title"
-      ". meta";
-  }
 }

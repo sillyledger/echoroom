@@ -1,4 +1,3 @@
-import { PLANNED_EPISODES, type PlannedEpisode } from "./episodes";
 import { PRIMARY_LISTEN_URL } from "./links";
 import { getSpotifyEpisodeLinks, normaliseTitle } from "./spotify";
 import { getEpisodeNotes, spotifyIdFromUrl, type EpisodeNote } from "./notes";
@@ -115,10 +114,4 @@ export async function getEpisodeBySlug(slug: string): Promise<{
   const episode = episodes.find((e) => e.slug === slug) ?? null;
   const newer = episode ? episodes.find((e) => e.number === episode.number + 1) ?? null : null;
   return { episode, note, newer };
-}
-
-// Planned episodes not yet in the feed (by number), in order.
-export function upcomingAfter(published: Episode[]): PlannedEpisode[] {
-  const maxPublished = published.reduce((m, e) => Math.max(m, e.number), 0);
-  return PLANNED_EPISODES.filter((p) => p.number > maxPublished);
 }

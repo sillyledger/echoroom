@@ -158,22 +158,6 @@
 
 .season-card-listen:hover { color: var(--text); border-color: var(--accent); }
 
-.season-card-soon {
-  background: transparent;
-  border: 1px dashed var(--border-strong);
-}
-
-.season-card-soon-label {
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted-2);
-  font-weight: 600;
-}
-
-.season-card-soon .season-card-title { color: var(--muted); }
-.season-card-soon .season-card-meta { color: var(--muted-2); }
-
 /* =================== TABLET =================== */
 @media (max-width: 1024px) {
   .season-grid {

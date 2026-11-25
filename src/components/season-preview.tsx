@@ -1,4 +1,4 @@
-import { getEpisodes, upcomingAfter } from "@/lib/feed";
+import { getEpisodes } from "@/lib/feed";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -11,8 +11,7 @@ const ExtIcon = () => (
 export default async function SeasonPreview() {
   const published = await getEpisodes();
   const shown = published.slice(0, 3);
-  const soon = upcomingAfter(published).slice(0, 3 - shown.length);
-  if (shown.length === 0 && soon.length === 0) return null;
+  if (shown.length === 0) return null;
 
   return (
     <section className="home-section season" aria-labelledby="season-heading">
@@ -48,17 +47,6 @@ export default async function SeasonPreview() {
                   Listen <ExtIcon />
                 </a>
               </div>
-            </div>
-          </article>
-        ))}
-        {soon.map((p) => (
-          <article key={p.number} className="season-card season-card-soon">
-            <div className="season-card-top">
-              <span className="season-card-soon-label">Coming up · EP {pad(p.number)}</span>
-            </div>
-            <div>
-              <h3 className="season-card-title">{p.title}</h3>
-              <p className="season-card-meta">Not out yet</p>
             </div>
           </article>
         ))}

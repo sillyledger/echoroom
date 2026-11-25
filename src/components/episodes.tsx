@@ -1,11 +1,11 @@
 import Navbar from "./Navbar";
-import { getEpisodes, upcomingAfter } from "@/lib/feed";
+import { getEpisodes } from "@/lib/feed";
+import { PRIMARY_LISTEN_URL, SPOTIFY_URL } from "@/lib/links";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
 export default async function Episodes() {
   const published = await getEpisodes();
-  const soon = upcomingAfter(published);
 
   return (
     <section className="episodes">
@@ -14,7 +14,13 @@ export default async function Episodes() {
         <h1>Episodes</h1>
         <p className="episodes-lede">Ordinary life in clear B2 English. Every episode, newest first.</p>
 
-        {published.length > 0 && (
+        {published.length === 0 ? (
+          <p className="episodes-empty">
+            New episodes are on the way. Listen on{" "}
+            <a href={PRIMARY_LISTEN_URL} target="_blank" rel="noopener noreferrer">Apple Podcasts</a> or{" "}
+            <a href={SPOTIFY_URL} target="_blank" rel="noopener noreferrer">Spotify</a>.
+          </p>
+        ) : (
           <>
             <div className="episodes-meta">
               <span>Out now · {published.length} {published.length === 1 ? "episode" : "episodes"}</span>
@@ -35,20 +41,6 @@ export default async function Episodes() {
                       <path d="M7 17L17 7" /><path d="M8 7h9v9" />
                     </svg>
                   </a>
-                </li>
-              ))}
-            </ol>
-          </>
-        )}
-
-        {soon.length > 0 && (
-          <>
-            <ol className="episodes-list episodes-list-soon">
-              {soon.map((p) => (
-                <li key={p.number} className="episode-row episode-row-soon">
-                  <span className="episode-number">{pad(p.number)}</span>
-                  <span className="episode-title">{p.title}</span>
-                  <span className="episode-date">Coming up</span>
                 </li>
               ))}
             </ol>
