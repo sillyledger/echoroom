@@ -86,7 +86,7 @@ export default function Home() {
             <div className="landing-ctas">
               <a href={linkFor("Apple Podcasts")} className="btn-primary" target="_blank" rel="noopener noreferrer">
                 <PodcastIcon />
-                Listen on Apple Podcasts
+                Apple
               </a>
               <a href={linkFor("Spotify")} className="btn-secondary" target="_blank" rel="noopener noreferrer">
                 Spotify

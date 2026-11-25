@@ -1,12 +1,6 @@
 import { Fragment } from "react";
 import { PLATFORM_LINKS } from "@/lib/links";
 
-const LISTEN_ORDER = ["Apple Podcasts", "Spotify", "YouTube", "Amazon Music"];
-
-const LISTEN_LINKS = LISTEN_ORDER.map((label) =>
-  PLATFORM_LINKS.find((p) => p.label === label),
-).filter((p): p is (typeof PLATFORM_LINKS)[number] => Boolean(p));
-
 export default function Footer() {
   return (
     <footer className="site-footer" id="listen">
@@ -15,7 +9,7 @@ export default function Footer() {
           <div className="footer-col">
             <span className="label label-accent">Listen</span>
             <nav className="footer-row" aria-label="Listen">
-              {LISTEN_LINKS.map((p, i) => (
+              {PLATFORM_LINKS.map((p, i) => (
                 <Fragment key={p.label}>
                   {i > 0 && <span aria-hidden="true">·</span>}
                   <a href={p.href} target="_blank" rel="noopener noreferrer">

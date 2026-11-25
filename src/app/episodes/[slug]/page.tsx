@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import SpotifyPlayer from "@/components/SpotifyPlayer";
 import { getEpisodeBySlug, type Episode } from "@/lib/feed";
 import { getEpisodeNotes, spotifyIdFromUrl, type EpisodeNote } from "@/lib/notes";
-import { PLATFORM_LINKS, PRIMARY_LISTEN_URL } from "@/lib/links";
+import { PLATFORM_LINKS, SPOTIFY_URL } from "@/lib/links";
 import { OG_IMAGE } from "@/lib/og";
 
 export const revalidate = 300;
@@ -173,7 +173,7 @@ export default async function EpisodePage({ params }: Props) {
             label={number !== undefined ? `Echo Room · EP ${pad(number)}` : "Echo Room"}
           />
         ) : (
-          <a href={PRIMARY_LISTEN_URL} className="btn-primary" target="_blank" rel="noopener noreferrer">
+          <a href={SPOTIFY_URL} className="btn-primary" target="_blank" rel="noopener noreferrer">
             Listen on Spotify
             <ExtIcon />
           </a>
@@ -206,7 +206,7 @@ export default async function EpisodePage({ params }: Props) {
             <div className="episode-closing-card">
               <span className="episode-closing-label">Latest episode</span>
               <span className="episode-closing-text">New ones land on Spotify first.</span>
-              <a href={PRIMARY_LISTEN_URL} className="episode-closing-link" target="_blank" rel="noopener noreferrer">
+              <a href={SPOTIFY_URL} className="episode-closing-link" target="_blank" rel="noopener noreferrer">
                 Follow the show
                 <ExtIcon />
               </a>
