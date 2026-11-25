@@ -147,7 +147,7 @@ export default async function EpisodePage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
       <Navbar />
-      <div className="episode-inner">
+      <div className="episode-inner container">
         <a href="/episodes" className="episode-back">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
             <path d="M19 12H5" /><path d="M11 6l-6 6 6 6" />

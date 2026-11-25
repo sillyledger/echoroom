@@ -9,6 +9,7 @@ const LISTEN_LINKS = LISTEN_ORDER.map((label) =>
 export default function Footer() {
   return (
     <footer className="site-footer" id="listen">
+      <div className="site-footer-inner container">
       <nav className="footer-col" aria-label="Listen">
         <span className="label label-accent">Listen</span>
         {LISTEN_LINKS.map((p) => (
@@ -32,6 +33,7 @@ export default function Footer() {
           <span aria-hidden="true">·</span>
           <a href="/privacy">Privacy</a>
         </nav>
+      </div>
       </div>
     </footer>
   );

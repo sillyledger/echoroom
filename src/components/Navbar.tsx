@@ -20,7 +20,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="nav" aria-label="Main">
+    <nav className="nav container" aria-label="Main">
       <a href="/" className="logo">
         <Logo size={24} />
         Echo Room

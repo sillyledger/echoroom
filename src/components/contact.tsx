@@ -15,7 +15,7 @@ export default function Contact() {
   return (
     <section className="contact">
       <Navbar />
-      <div className="contact-inner">
+      <div className="contact-inner container">
         <p className="section-label contact-label">Contact</p>
         <h1>Talk back.</h1>
         <p className="contact-lede">

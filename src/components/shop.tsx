@@ -16,7 +16,7 @@ export default async function Shop() {
     <section className="shop">
       <Navbar />
 
-      <div className="shop-inner">
+      <div className="shop-inner container">
 
         <h1>
           <span className="title-white">COMING</span>

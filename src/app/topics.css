@@ -6,9 +6,12 @@
 }
 
 .topics-inner {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 96px var(--gutter) 120px;
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
+
+.topics-inner > * {
+  max-width: 640px;
 }
 
 .topics-inner h1 {
@@ -28,6 +31,7 @@
 
 @media (max-width: 768px) {
   .topics-inner {
-    padding: 48px var(--gutter) 72px;
+    padding-top: 48px;
+    padding-bottom: 72px;
   }
 }

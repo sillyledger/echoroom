@@ -71,7 +71,7 @@ export default function Home() {
     <main className="landing">
       <section className="landing-hero">
         <Navbar />
-        <div className="landing-hero-grid">
+        <div className="landing-hero-grid container">
           <div className="landing-hero-text">
             <div className="landing-label-row">
               <span className="level-pill">B2</span>
@@ -116,6 +116,7 @@ export default function Home() {
       </section>
 
       <section className="ladder" aria-labelledby="ladder-heading">
+        <div className="container">
         <div className="ladder-head">
           <div>
             <p className="label">The Study Brew ladder</p>
@@ -161,6 +162,7 @@ export default function Home() {
             See every show and level on studybrew.co ↗
           </a>
         </p>
+        </div>
       </section>
     </main>
   );

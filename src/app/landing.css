@@ -15,9 +15,9 @@
   display: grid;
   grid-template-columns: 1.25fr 0.9fr;
   align-items: center;
-  gap: 64px;
-  width: 100%;
-  padding: 48px var(--gutter) 88px;
+  gap: 48px;
+  padding-top: 48px;
+  padding-bottom: 88px;
 }
 
 .landing-label-row {
@@ -28,7 +28,7 @@
 }
 
 .landing-h1 {
-  font-size: clamp(3rem, 6.4vw, 6rem);
+  font-size: clamp(3rem, 5.8vw, 5.25rem);
   margin-bottom: 28px;
 }
 
@@ -75,7 +75,7 @@
   position: relative;
   background: var(--paper);
   border-radius: 12px;
-  padding: 5% 5% 16%;
+  padding: 5% 5% 8%;
   box-shadow: 0 30px 60px -12px var(--shadow), 0 12px 24px -8px var(--shadow);
   transform: rotate(3deg);
 }
@@ -90,8 +90,10 @@
 
 .polaroid-photo img {
   object-fit: cover;
-  object-position: center 30%;
+  object-position: 50% 80%;
   filter: grayscale(1);
+  transform: scale(1.12);
+  transform-origin: 42% 55%;
 }
 
 .polaroid-tape {
@@ -109,12 +111,14 @@
 .polaroid-hero {
   width: 100%;
   max-width: 380px;
+  margin: 0 auto;
 }
 
 /* ---------- Who's talking ---------- */
 .who-card {
   width: 100%;
-  max-width: 400px;
+  max-width: 380px;
+  margin: 0 auto;
   padding: 22px 24px;
   background: var(--panel-soft);
   border: 1px solid var(--border);
@@ -141,7 +145,7 @@
 /* ---------- Ladder ---------- */
 .ladder {
   border-top: 1px solid var(--border);
-  padding: 120px var(--gutter) 128px;
+  padding: 120px 0 128px;
 }
 
 .ladder-head {
@@ -305,7 +309,6 @@
 
 /* ---------- Tablet ---------- */
 @media (max-width: 1100px) {
-  .landing-hero-grid { gap: 40px; }
   .ladder-step { padding: 16px 14px 18px; }
   .ladder-name { font-size: 17px; }
 }
@@ -315,14 +318,15 @@
   .landing-hero-grid {
     grid-template-columns: 1fr;
     gap: 56px;
-    padding: 32px var(--gutter) 72px;
+    padding-top: 32px;
+    padding-bottom: 72px;
   }
 
   .landing-hero-side { gap: 32px; }
 
   .polaroid-hero { max-width: 320px; }
 
-  .ladder { padding: 80px var(--gutter) 88px; }
+  .ladder { padding: 80px 0 88px; }
 
   .ladder-head { grid-template-columns: 1fr; }
 

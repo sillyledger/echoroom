@@ -5,9 +5,8 @@
 }
 
 .episodes-inner {
-  max-width: 1104px;
-  margin: 0 auto;
-  padding: 96px var(--gutter) 120px;
+  padding-top: 96px;
+  padding-bottom: 120px;
 }
 
 .episodes-inner h1 {
@@ -140,7 +139,8 @@
 
 @media (max-width: 768px) {
   .episodes-inner {
-    padding: 48px var(--gutter) 72px;
+    padding-top: 48px;
+    padding-bottom: 72px;
   }
 
   .episodes-lede {

@@ -15,7 +15,7 @@ export default function About() {
     <section className="about">
       <Navbar />
 
-      <div className="about-inner">
+      <div className="about-inner container">
         <figure className="about-figure">
           <div className="about-photo">
             <Image

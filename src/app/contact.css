@@ -1,9 +1,12 @@
 .contact { position: relative; width: 100%; background: var(--bg); }
 
 .contact-inner {
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 88px var(--gutter) 120px;
+  padding-top: 88px;
+  padding-bottom: 120px;
+}
+
+.contact-inner > * {
+  max-width: 760px;
 }
 
 .contact-label { margin-bottom: 16px; }
@@ -128,7 +131,7 @@
 }
 
 @media (max-width: 768px) {
-  .contact-inner { padding: 32px var(--gutter) 72px; }
+  .contact-inner { padding-top: 32px; padding-bottom: 72px; }
   .contact-lede { font-size: 18px; margin-bottom: 20px; }
   .contact-list { margin-bottom: 28px; }
   .contact-list li { grid-template-columns: 40px 1fr; padding: 16px 0; }

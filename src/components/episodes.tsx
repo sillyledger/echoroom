@@ -10,7 +10,7 @@ export default async function Episodes() {
   return (
     <section className="episodes">
       <Navbar />
-      <div className="episodes-inner">
+      <div className="episodes-inner container">
         <h1>Episodes</h1>
         <p className="episodes-lede">One voice, no script. Every episode, newest first.</p>
 

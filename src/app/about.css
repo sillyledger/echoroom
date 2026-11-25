@@ -10,10 +10,9 @@
   grid-template-columns: 420px minmax(0, 700px);
   gap: 88px;
   align-items: start;
-  justify-content: center;
-  padding: 96px var(--gutter) 120px;
-  max-width: 1440px;
-  margin: 0 auto;
+  justify-content: space-between;
+  padding-top: 96px;
+  padding-bottom: 120px;
 }
 
 /* PHOTO */
@@ -180,7 +179,8 @@
   .about-inner {
     grid-template-columns: 1fr;
     gap: 32px;
-    padding: 24px var(--gutter) 72px;
+    padding-top: 24px;
+    padding-bottom: 72px;
   }
 
   .about-figure {

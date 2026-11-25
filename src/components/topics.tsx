@@ -10,7 +10,7 @@ export default async function Topics() {
     <section className="topics">
       <Navbar />
 
-      <div className="topics-inner">
+      <div className="topics-inner container">
 
         <h1>Topics</h1>
 

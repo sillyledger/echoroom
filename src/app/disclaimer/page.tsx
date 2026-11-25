@@ -14,7 +14,7 @@ export default function DisclaimerPage() {
   return (
     <section className="legal">
       <Navbar />
-      <div className="legal-inner">
+      <div className="legal-inner container">
         <h1>Disclaimer</h1>
         <p className="legal-updated">Last updated: October 2, 2026</p>
 
