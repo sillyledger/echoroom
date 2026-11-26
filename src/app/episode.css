@@ -271,14 +271,12 @@ a.episode-closing-card:hover { border-color: var(--muted-2); }
 .episode-closing-link:hover { color: var(--text); }
 
 /* Title links from the episode lists (home section and /episodes) */
-.episode-title-link,
-.season-card-title-link {
+.episode-title-link {
   color: inherit;
   text-decoration: none;
 }
 
-.episode-title-link:hover,
-.season-card-title-link:hover {
+.episode-title-link:hover {
   text-decoration: underline;
   text-decoration-color: var(--border-strong);
   text-underline-offset: 4px;

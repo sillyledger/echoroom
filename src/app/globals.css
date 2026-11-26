@@ -115,8 +115,7 @@ h3 {
 }
 
 /* ---------- Small labels ---------- */
-.label,
-.section-label {
+.label {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -184,69 +183,6 @@ h3 {
 .btn-sm {
   padding: 9px 16px;
   font-size: 14px;
-}
-
-/* ---------- Pills (platform links etc.) ---------- */
-.pill {
-  display: inline-flex;
-  align-items: center;
-  height: 44px;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--muted);
-  background: var(--panel-soft);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-btn);
-  padding: 0 18px;
-  text-decoration: none;
-  transition: border-color 0.2s, color 0.2s;
-}
-
-.pill:hover { border-color: var(--muted-2); color: var(--text); }
-
-/* ---------- Badge (used on /episodes, /shop, /topics) ---------- */
-.launch-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  width: fit-content;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  background: var(--accent-tint);
-  border: 1px solid var(--accent-line);
-  border-radius: 999px;
-  padding: 8px 16px 8px 12px;
-  margin-bottom: 28px;
-}
-
-.launch-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-}
-
-/* ---------- Shared: arrow text link ---------- */
-.text-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--text);
-  text-decoration: none;
-  border-bottom: 1px solid var(--border-strong);
-  transition: border-color 0.2s, color 0.2s;
-  width: fit-content;
-}
-
-.text-link:hover {
-  border-color: var(--accent);
 }
 
 /* =================== NAV (every page) =================== */

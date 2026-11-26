@@ -3,7 +3,6 @@ import { DM_Sans } from "next/font/google";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import "./hero.css";
-import "./home.css";
 import "./about.css";
 import "./episodes.css";
 import "./shop.css";

@@ -81,16 +81,6 @@
   color: var(--text);
 }
 
-.episode-status {
-  display: inline-flex;
-  justify-content: flex-end;
-  color: var(--muted-2);
-}
-
-.episode-lock {
-  flex-shrink: 0;
-}
-
 .episode-date {
   font-size: 15px;
   letter-spacing: 0.08em;
@@ -177,10 +167,6 @@
   .episode-row-first .episode-title {
     grid-area: title;
     font-size: 19px;
-  }
-
-  .episode-status {
-    display: none;
   }
 
   .episode-date {
